@@ -7,7 +7,7 @@ level,dance,step
 2,Waltz,Simple Twinkle
 2,Waltz,Two Way Underarm Turn
 2,Waltz,Balance and Box
-2,Waltz,FacetoFace-BacktoBack
+2,Waltz,Face-to-Face Back-to-Back
 2,Waltz,Turning Twinkles
 2,Waltz,Reverse Turn
 2,Waltz,Reverse Turn w/UAT
@@ -21,22 +21,22 @@ level,dance,step
 3,Waltz,Spin Turn
 1,Rumba,Box Step
 1,Rumba,Slow Underarm Turn
-1,Rumba,RumbaWalksFwrd&Back
+1,Rumba,Rumba Walks Fwd and Back
 1,Rumba,5th Position Breaks
 2,Rumba,OpenBreakUnderarmTurn
 2,Rumba,Cross Body Lead
 2,Rumba,Outside Partner Breaks
 2,Rumba,Cross Over Breaks
-2,Rumba,Cross Over & Side Rocks
+2,Rumba,Cross Over and Side Rocks
 2,Rumba,Open Rumba Walks
 2,Rumba,Shoulder Check
 2,Rumba,Cradle Circle
 3,Rumba,5thPositionBreakswithTurn
 3,Rumba,Reverse Underarm Turn
-3,Rumba,Quick Underarm Turn & Loop
+3,Rumba,Quick Underarm Turn and Loop
 3,Rumba,Open Rumba Walks with Spiral Turns
-3,Rumba,5thPositionBreakswithTurn - variations
-3,Rumba,"Curl,ProgressivetoUAT,Rocks"
+3,Rumba,5th Position Breaks with Turn - variations
+3,Rumba,Curl Progressive to UAT and Rocks
 3,Rumba,Open Circular Walks
 3,Rumba,Spot Turn Combination
 1,Cha Cha,Basic in Place
@@ -57,24 +57,24 @@ level,dance,step
 3,Cha Cha,Crossover Flick to Side Break
 1,EC Swing,Basic
 1,EC Swing,Underarm Turn
-1,EC Swing,Basic Turning to Right/Left
+1,EC Swing,Basic Turning to Right and Left
 1,EC Swing,Throwout
 2,EC Swing,Triple Rhythm
-2,EC Swing,AmericanSpinfromDblHandhold
+2,EC Swing,American Spin from Double Handhold
 2,EC Swing,Shoulder Check
 2,EC Swing,Alternating Underarm Turn
 2,EC Swing,Triple Rhythm
 2,EC Swing,AmericanSpinfromHandshake
 2,EC Swing,Cradle
-2,EC Swing,Cradle with Points & Kicks
+2,EC Swing,Cradle with Points and Kicks
 3,EC Swing,Cradle to Hammerlock
 3,EC Swing,UAT with Shoulder Slide
 3,EC Swing,Back & Forward Passes
-3,EC Swing,Back&ForwardPasseswith Turn
-3,EC Swing,Oposition Break & Roll Out
+3,EC Swing,Back and Forward Passes with Turn
+3,EC Swing,Oposition Break and Roll Out
 3,EC Swing,Swivels to Locks
 3,EC Swing,Rocks
-3,EC Swing,Walk Back w/Kicks
+3,EC Swing,Walk Back with Kicks
 1,Foxtrot,Basic
 1,Foxtrot,Rock Turn to Left
 1,Foxtrot,Promenade
@@ -88,10 +88,10 @@ level,dance,step
 2,Foxtrot,Twinkle
 2,Foxtrot,Promenade Twinkles
 3,Foxtrot,Turning Twinkles to OPP
-3,Foxtrot,TurningTwinklestoOPPw/UAT
+3,Foxtrot,Turning Twinkles to OPP with UAT
 3,Foxtrot,Grapevine
 3,Foxtrot,Promenade Twist
 3,Foxtrot,Promenade Pivot
-3,Foxtrot,RunningStepsinBasicand Box Rhythm
-3,Foxtrot,Twinkle&WeavewithGrapevine
+3,Foxtrot,Running Steps in Basic and Box Rhythm
+3,Foxtrot,Twinkle and Weave with Grapevine
 3,Foxtrot,Sweetheart Roll
