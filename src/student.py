@@ -25,6 +25,7 @@ class Student:
         self.name = name
         self.email = email
         self.mobile = mobile
+        # self.repertoire = f"{name.strip()}.json"
 
 
 # Functions for accessing & operating on Student data stored in students.json
