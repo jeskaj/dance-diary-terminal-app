@@ -32,6 +32,7 @@ def add_student():
     Function to allow user to input new student details
     """
     # Get student details via user input
+    print('\n*** CREATE NEW STUDENT ***')
     name = input("Enter student's full name: ")
     email = input("Enter student's email: ")
     mobile = input("Enter student's mobile phone number: ")
@@ -55,7 +56,7 @@ def add_student():
     # Print confirmation message displaying new student details and total number of students now stored
     print('\nYou have added a new student with the following details:\n')
     print(f'Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}')
-    print(f'\nTotal Number of Students: {len(students)}')
+    print(f'\nYour total number of students is now: {len(students)}')
 
 def view_students():
     # View details of all current students

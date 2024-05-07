@@ -14,6 +14,6 @@ def create_json_syllabus(syllabus_list_of_dicts):
     with open('syllabus.json', 'w') as f:
         json.dump(syllabus_list_of_dicts, f, indent=4)
 
-new_syllabus = import_csv_syllabus('syllabus.csv')
-
-create_json_syllabus(new_syllabus)
+# Code for creating initial syllabus data
+# new_syllabus = import_csv_syllabus('syllabus.csv')
+# create_json_syllabus(new_syllabus)
