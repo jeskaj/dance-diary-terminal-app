@@ -1,97 +1,97 @@
-level,dance,step
-1,Waltz,Left Turning Box
-1,Waltz,Underarm Turn Right
-1,Waltz,Progressive
-1,Waltz,Balance Steps
-2,Waltz,Right Turning Box
-2,Waltz,Simple Twinkle
-2,Waltz,Two Way Underarm Turn
-2,Waltz,Balance and Box
-2,Waltz,Face-to-Face Back-to-Back
-2,Waltz,Turning Twinkles
-2,Waltz,Reverse Turn
-2,Waltz,Reverse Turn w/UAT
-3,Waltz,Natural Turn
-3,Waltz,Natural Turn w/UAT
-3,Waltz,Progressive Twinkles
-3,Waltz,Grapevine
-3,Waltz,Promenade Chasse
-3,Waltz,Twinkle & Weave
-3,Waltz,Waterfall
-3,Waltz,Spin Turn
-1,Rumba,Box Step
-1,Rumba,Slow Underarm Turn
-1,Rumba,Rumba Walks Fwd and Back
-1,Rumba,5th Position Breaks
-2,Rumba,OpenBreakUnderarmTurn
-2,Rumba,Cross Body Lead
-2,Rumba,Outside Partner Breaks
-2,Rumba,Cross Over Breaks
-2,Rumba,Cross Over and Side Rocks
-2,Rumba,Open Rumba Walks
-2,Rumba,Shoulder Check
-2,Rumba,Cradle Circle
-3,Rumba,5thPositionBreakswithTurn
-3,Rumba,Reverse Underarm Turn
-3,Rumba,Quick Underarm Turn and Loop
-3,Rumba,Open Rumba Walks with Spiral Turns
-3,Rumba,5th Position Breaks with Turn - variations
-3,Rumba,Curl Progressive to UAT and Rocks
-3,Rumba,Open Circular Walks
-3,Rumba,Spot Turn Combination
-1,Cha Cha,Basic in Place
-1,Cha Cha,Side Basic
-1,Cha Cha,Progressive Basic
-1,Cha Cha,Crossover Breaks
-2,Cha Cha,Outside Partner Breaks
-2,Cha Cha,Cross Body Lead
-2,Cha Cha,OpenBreakUnderarmTurn
-2,Cha Cha,Chase Turns
-2,Cha Cha,Shoulder Check
-2,Cha Cha,Cross Body Lead to Reverse UAT
-3,Cha Cha,Shadow Positions
-3,Cha Cha,Butterfly
-3,Cha Cha,Alternating Underarm Turns
-3,Cha Cha,Three Cha Chas
-3,Cha Cha,Cross-Body Pull Back
-3,Cha Cha,Crossover Flick to Side Break
-1,EC Swing,Basic
-1,EC Swing,Underarm Turn
-1,EC Swing,Basic Turning to Right and Left
-1,EC Swing,Throwout
-2,EC Swing,Triple Rhythm
-2,EC Swing,American Spin from Double Handhold
-2,EC Swing,Shoulder Check
-2,EC Swing,Alternating Underarm Turn
-2,EC Swing,Triple Rhythm
-2,EC Swing,AmericanSpinfromHandshake
-2,EC Swing,Cradle
-2,EC Swing,Cradle with Points and Kicks
-3,EC Swing,Cradle to Hammerlock
-3,EC Swing,UAT with Shoulder Slide
-3,EC Swing,Back & Forward Passes
-3,EC Swing,Back and Forward Passes with Turn
-3,EC Swing,Oposition Break and Roll Out
-3,EC Swing,Swivels to Locks
-3,EC Swing,Rocks
-3,EC Swing,Walk Back with Kicks
-1,Foxtrot,Basic
-1,Foxtrot,Rock Turn to Left
-1,Foxtrot,Promenade
-1,Foxtrot,Sway Step
-2,Foxtrot,Rock Turn to Right
-2,Foxtrot,Promenade with UAT
-2,Foxtrot,Sway Underarm Turn
-2,Foxtrot,Zig Zag in Line
-2,Foxtrot,Zig Zag Outside Partner
-2,Foxtrot,Box Step
-2,Foxtrot,Twinkle
-2,Foxtrot,Promenade Twinkles
-3,Foxtrot,Turning Twinkles to OPP
-3,Foxtrot,Turning Twinkles to OPP with UAT
-3,Foxtrot,Grapevine
-3,Foxtrot,Promenade Twist
-3,Foxtrot,Promenade Pivot
-3,Foxtrot,Running Steps in Basic and Box Rhythm
-3,Foxtrot,Twinkle and Weave with Grapevine
-3,Foxtrot,Sweetheart Roll
+dance,level,step
+Waltz,1,Left Turning Box
+Waltz,1,Underarm Turn Right
+Waltz,1,Progressive
+Waltz,1,Balance Steps
+Waltz,2,Right Turning Box
+Waltz,2,Simple Twinkle
+Waltz,2,Two Way Underarm Turn
+Waltz,2,Balance and Box
+Waltz,2,Face-to-Face Back-to-Back
+Waltz,2,Turning Twinkles
+Waltz,2,Reverse Turn
+Waltz,2,Reverse Turn w/UAT
+Waltz,3,Natural Turn
+Waltz,3,Natural Turn w/UAT
+Waltz,3,Progressive Twinkles
+Waltz,3,Grapevine
+Waltz,3,Promenade Chasse
+Waltz,3,Twinkle & Weave
+Waltz,3,Waterfall
+Waltz,3,Spin Turn
+Rumba,1,Box Step
+Rumba,1,Slow Underarm Turn
+Rumba,1,Rumba Walks Fwd and Back
+Rumba,1,5th Position Breaks
+Rumba,2,OpenBreakUnderarmTurn
+Rumba,2,Cross Body Lead
+Rumba,2,Outside Partner Breaks
+Rumba,2,Cross Over Breaks
+Rumba,2,Cross Over and Side Rocks
+Rumba,2,Open Rumba Walks
+Rumba,2,Shoulder Check
+Rumba,2,Cradle Circle
+Rumba,3,5thPositionBreakswithTurn
+Rumba,3,Reverse Underarm Turn
+Rumba,3,Quick Underarm Turn and Loop
+Rumba,3,Open Rumba Walks with Spiral Turns
+Rumba,3,5th Position Breaks with Turn - variations
+Rumba,3,Curl Progressive to UAT and Rocks
+Rumba,3,Open Circular Walks
+Rumba,3,Spot Turn Combination
+Cha Cha,1,Basic in Place
+Cha Cha,1,Side Basic
+Cha Cha,1,Progressive Basic
+Cha Cha,1,Crossover Breaks
+Cha Cha,2,Outside Partner Breaks
+Cha Cha,2,Cross Body Lead
+Cha Cha,2,OpenBreakUnderarmTurn
+Cha Cha,2,Chase Turns
+Cha Cha,2,Shoulder Check
+Cha Cha,2,Cross Body Lead to Reverse UAT
+Cha Cha,3,Shadow Positions
+Cha Cha,3,Butterfly
+Cha Cha,3,Alternating Underarm Turns
+Cha Cha,3,Three Cha Chas
+Cha Cha,3,Cross-Body Pull Back
+Cha Cha,3,Crossover Flick to Side Break
+EC Swing,1,Basic
+EC Swing,1,Underarm Turn
+EC Swing,1,Basic Turning to Right and Left
+EC Swing,1,Throwout
+EC Swing,2,Triple Rhythm
+EC Swing,2,American Spin from Double Handhold
+EC Swing,2,Shoulder Check
+EC Swing,2,Alternating Underarm Turn
+EC Swing,2,Triple Rhythm
+EC Swing,2,AmericanSpinfromHandshake
+EC Swing,2,Cradle
+EC Swing,2,Cradle with Points and Kicks
+EC Swing,3,Cradle to Hammerlock
+EC Swing,3,UAT with Shoulder Slide
+EC Swing,3,Back & Forward Passes
+EC Swing,3,Back and Forward Passes with Turn
+EC Swing,3,Oposition Break and Roll Out
+EC Swing,3,Swivels to Locks
+EC Swing,3,Rocks
+EC Swing,3,Walk Back with Kicks
+Foxtrot,1,Basic
+Foxtrot,1,Rock Turn to Left
+Foxtrot,1,Promenade
+Foxtrot,1,Sway Step
+Foxtrot,2,Rock Turn to Right
+Foxtrot,2,Promenade with UAT
+Foxtrot,2,Sway Underarm Turn
+Foxtrot,2,Zig Zag in Line
+Foxtrot,2,Zig Zag Outside Partner
+Foxtrot,2,Box Step
+Foxtrot,2,Twinkle
+Foxtrot,2,Promenade Twinkles
+Foxtrot,3,Turning Twinkles to OPP
+Foxtrot,3,Turning Twinkles to OPP with UAT
+Foxtrot,3,Grapevine
+Foxtrot,3,Promenade Twist
+Foxtrot,3,Promenade Pivot
+Foxtrot,3,Running Steps in Basic and Box Rhythm
+Foxtrot,3,Twinkle and Weave with Grapevine
+Foxtrot,3,Sweetheart Roll

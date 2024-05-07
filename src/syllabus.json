@@ -1,7 +1,482 @@
 [
     {
-        "name": "Left Turning Box",
-        "style": "Waltz",
-        "level": 1
+        "dance": "Waltz",
+        "level": "1",
+        "step": "Left Turning Box"
+    },
+    {
+        "dance": "Waltz",
+        "level": "1",
+        "step": "Underarm Turn Right"
+    },
+    {
+        "dance": "Waltz",
+        "level": "1",
+        "step": "Progressive"
+    },
+    {
+        "dance": "Waltz",
+        "level": "1",
+        "step": "Balance Steps"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Right Turning Box"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Simple Twinkle"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Two Way Underarm Turn"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Balance and Box"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Face-to-Face Back-to-Back"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Turning Twinkles"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Reverse Turn"
+    },
+    {
+        "dance": "Waltz",
+        "level": "2",
+        "step": "Reverse Turn w/UAT"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Natural Turn"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Natural Turn w/UAT"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Progressive Twinkles"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Grapevine"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Promenade Chasse"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Twinkle & Weave"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Waterfall"
+    },
+    {
+        "dance": "Waltz",
+        "level": "3",
+        "step": "Spin Turn"
+    },
+    {
+        "dance": "Rumba",
+        "level": "1",
+        "step": "Box Step"
+    },
+    {
+        "dance": "Rumba",
+        "level": "1",
+        "step": "Slow Underarm Turn"
+    },
+    {
+        "dance": "Rumba",
+        "level": "1",
+        "step": "Rumba Walks Fwd and Back"
+    },
+    {
+        "dance": "Rumba",
+        "level": "1",
+        "step": "5th Position Breaks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "OpenBreakUnderarmTurn"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Cross Body Lead"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Outside Partner Breaks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Cross Over Breaks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Cross Over and Side Rocks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Open Rumba Walks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Shoulder Check"
+    },
+    {
+        "dance": "Rumba",
+        "level": "2",
+        "step": "Cradle Circle"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "5thPositionBreakswithTurn"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "Reverse Underarm Turn"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "Quick Underarm Turn and Loop"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "Open Rumba Walks with Spiral Turns"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "5th Position Breaks with Turn - variations"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "Curl Progressive to UAT and Rocks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "Open Circular Walks"
+    },
+    {
+        "dance": "Rumba",
+        "level": "3",
+        "step": "Spot Turn Combination"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "1",
+        "step": "Basic in Place"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "1",
+        "step": "Side Basic"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "1",
+        "step": "Progressive Basic"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "1",
+        "step": "Crossover Breaks"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "2",
+        "step": "Outside Partner Breaks"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "2",
+        "step": "Cross Body Lead"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "2",
+        "step": "OpenBreakUnderarmTurn"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "2",
+        "step": "Chase Turns"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "2",
+        "step": "Shoulder Check"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "2",
+        "step": "Cross Body Lead to Reverse UAT"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "3",
+        "step": "Shadow Positions"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "3",
+        "step": "Butterfly"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "3",
+        "step": "Alternating Underarm Turns"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "3",
+        "step": "Three Cha Chas"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "3",
+        "step": "Cross-Body Pull Back"
+    },
+    {
+        "dance": "Cha Cha",
+        "level": "3",
+        "step": "Crossover Flick to Side Break"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "1",
+        "step": "Basic"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "1",
+        "step": "Underarm Turn"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "1",
+        "step": "Basic Turning to Right and Left"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "1",
+        "step": "Throwout"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "Triple Rhythm"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "American Spin from Double Handhold"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "Shoulder Check"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "Alternating Underarm Turn"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "Triple Rhythm"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "AmericanSpinfromHandshake"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "Cradle"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "2",
+        "step": "Cradle with Points and Kicks"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Cradle to Hammerlock"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "UAT with Shoulder Slide"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Back & Forward Passes"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Back and Forward Passes with Turn"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Oposition Break and Roll Out"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Swivels to Locks"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Rocks"
+    },
+    {
+        "dance": "EC Swing",
+        "level": "3",
+        "step": "Walk Back with Kicks"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "1",
+        "step": "Basic"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "1",
+        "step": "Rock Turn to Left"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "1",
+        "step": "Promenade"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "1",
+        "step": "Sway Step"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Rock Turn to Right"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Promenade with UAT"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Sway Underarm Turn"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Zig Zag in Line"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Zig Zag Outside Partner"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Box Step"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Twinkle"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "2",
+        "step": "Promenade Twinkles"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Turning Twinkles to OPP"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Turning Twinkles to OPP with UAT"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Grapevine"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Promenade Twist"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Promenade Pivot"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Running Steps in Basic and Box Rhythm"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Twinkle and Weave with Grapevine"
+    },
+    {
+        "dance": "Foxtrot",
+        "level": "3",
+        "step": "Sweetheart Roll"
     }
 ]
