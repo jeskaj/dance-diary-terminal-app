@@ -11,11 +11,27 @@ The source code for this project is available on Github in the following reposit
 
 ## Style Guide
 
-Identify any code style guide or styling conventions that the application will adhere to.
+**ASSIGNMENT REQUIREMENTS**
+- Identify any code style guide or styling conventions that the application will adhere to.
+- Reference the chosen style guide appropriately.
 
-Reference the chosen style guide appropriately.
+**CHECK & UPDATE THIS - TAKEN DIRECTLY FROM EXAMPLE PROJECT:**
+- 4 spaces per indentation level
+- Maximum line length is 79 characters
+- Imports on separate lines
+- Using single-quoted strings consistently, except when an apostrophe appears in the string, in which case double-quotes were used to avoid backslashes, and hence improve readability
+- Comments in complete sentences and the first word is capitalised. Also inline comments were avoided
+- Function names are in lower case and words are separated by underscores to improve readability.
+
+**MY TEXT**
+
 
 PEP8
+- Blank lines:
+  - Surround top-level function and class definitions with two blank lines.
+  - Method definitions inside a class are surrounded by a single blank line.
+  - Extra blank lines may be used (sparingly) to separate groups of related functions. Blank lines may be omitted between a bunch of related one-liners (e.g. a set of dummy implementations).
+  - Use blank lines in functions, sparingly, to indicate logical sections.
 
 numpy
 
