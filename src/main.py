@@ -1,4 +1,4 @@
-from student import Student, add_student, view_all_students
+from student import Student, add_student, view_students
 
 # DELETE THIS - Error text for later use: 'Invalid input - you must enter a numeric option from the menu.'
 
@@ -56,7 +56,7 @@ def student_menu():
         if selection_2 == 1:
             add_student()
         elif selection_2 == 2:
-            view_all_students()
+            view_students()
         elif selection_2 == 3:
             print('\nYou have selected Edit Student Details.  This part of the program is yet to be written.  Please make another selection.')
         else:

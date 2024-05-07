@@ -62,7 +62,7 @@ def add_student():
 
 
 def select_student():
-    # Select a single student
+    # Find and return a single valid student name
      with open('students.json') as f:
         students = json.load(f)
         # Sort students by name
@@ -86,37 +86,52 @@ def select_student():
         return name
 
 
-
-def view_student_details():
-    # Select a single student for viewing their details
-     with open('students.json') as f:
+def view_student_deatils():
+    # Print details for a single student
+    with open('students.json') as f:
         students = json.load(f)
         # Sort students by name
         students_sorted = sorted(students, key=lambda d: d['name'])
-        # Create list of student names
-        student_names = [name['name'].lower() for name in students_sorted]
-        student_found = False
         # Get student name from user
-        name = input('Enter name of student:  ')
-        # Check if name input is in list of student names
-        if name.lower() in student_names:
-            student_found = True
-        while student_found == False:
-            print(f"\n*** ERROR:  There is no student named {name}.  Please enter a name from the following list:  ***\n")
-            for student in students_sorted:
-                print(student['name'])
-            # Get student name from user
-            name = input('\nEnter the name of a student from the above list:  ')
-            if name.lower() in student_names:
-                student_found = True
+        name = select_student()
         for student in students_sorted:
+            # Print student details, where input name is found in list of student names
             if student['name'].lower() == name.lower():
-                print(f"\n{student['name']}")
+                print(student['name'])
                 print(f"Email: {student['email']}")
                 print(f"Mobile: {student['mobile']}\n")
 
 
-def view_all_students():
+# def view_student_details_V1():
+#     # Select a single student for viewing their details
+#      with open('students.json') as f:
+#         students = json.load(f)
+#         # Sort students by name
+#         students_sorted = sorted(students, key=lambda d: d['name'])
+#         # Create list of student names
+#         student_names = [name['name'].lower() for name in students_sorted]
+#         student_found = False
+#         # Get student name from user
+#         name = input('Enter name of student:  ')
+#         # Check if name input is in list of student names
+#         if name.lower() in student_names:
+#             student_found = True
+#         while student_found == False:
+#             print(f"\n*** ERROR:  There is no student named {name}.  Please enter a name from the following list:  ***\n")
+#             for student in students_sorted:
+#                 print(student['name'])
+#             # Get student name from user
+#             name = input('\nEnter the name of a student from the above list:  ')
+#             if name.lower() in student_names:
+#                 student_found = True
+#         for student in students_sorted:
+#             if student['name'].lower() == name.lower():
+#                 print(f"\n{student['name']}")
+#                 print(f"Email: {student['email']}")
+#                 print(f"Mobile: {student['mobile']}\n")
+
+
+def view_students():
     # View details of all current students
     with open('students.json') as f:
         students = json.load(f)
@@ -133,28 +148,41 @@ def view_all_students():
                 print(f"Email: {student['email']}")
                 print(f"Mobile: {student['mobile']}\n")
         elif selection == 's':
-            view_student_details()
-        
+            view_student_deatils()
 
-# def view_student_deatils_v2():
-#     with open('students.json') as f:
-#         students = json.load(f)
-#         students_sorted = sorted(students, key=lambda d: d['name'])
-#         print('\nVIEW STUDENT DETAILS')
-#         print('[a]  View all students')
-#         print('[s]  Select a single student')
-#         selection = input('\nEnter a or s to view student details:  ')
-#         while selection != 'a' and selection != 's':
-#             selection = input("\nInvalid input. Enter 'a' to view all students or 's' to select a single student:  ")
-#         if selection == 'a':
-#             for student in students_sorted:
-#                 print(student['name'])
-#                 print(f"Email: {student['email']}")
-#                 print(f"Mobile: {student['mobile']}\n")
-#         elif selection == 's':
-#             view_student_details()
+
+def update_student():
+    name = select_student()
+    print('\nUPDATE STUDENT DETAILS')
+    print('[n]  Update name')
+    print('[e]  Update email')
+    print('[m]  Update movile')
+    selection = input('\nEnter n, e or m to update student details:  ')
+    # print(selection)
+
+    while selection != 'n' and selection != 'e' and selection != 'm':
+        selection = input("\nInvalid input. Enter 'n', 'e', or 'm' (see details above):  ")
+    # UP TO HERE:  Prob need to load whole .json at start - remember
+    # will need to write whole file back after updating element of single dictionary in list
+    
+    # Load existing students.json data
+    with open('students.json') as f:
+        students = json.load(f)
+
+        if selection == 'n':
+            print(student['name'])
+        elif selection == 'e':
+            print(f"Email: {student['email']}")
+        elif selection == 'm':
+            print(f"Mobile: {student['mobile']}\n")
+
+    # Output updated data back to students .json
+    with open('students.json', 'w') as f:
+        json.dump(students, f, indent=4)
+
 
 
 if __name__ == '__main__':
-    view_all_students()
-    # view_student_details()
+    # view_students()
+    # view_student_deatils()
+    update_student()
