@@ -1,4 +1,4 @@
-from student import add_student, view_students
+from student import add_student, view_students, update_student
 from syllabus import view_syllabus, view_dance
 
 
@@ -26,7 +26,7 @@ def print_student_menu():
     print('\nSTUDENT MENU:')
     print('[1]  Add new student')
     print('[2]  View student details')
-    print('[3]  Edit student details')
+    print('[3]  Update student details')
     print('[0]  Return to Main Menu\n')
 
 
@@ -35,7 +35,7 @@ def print_lesson_menu():
     print('\nLESSON MENU:')
     print('[1]  Add lesson')
     print('[2]  View lessons')
-    print('[3]  Edit lesson')
+    print('[3]  Update lesson')
     print('[0]  Return to Main Menu\n')
 
 
@@ -65,7 +65,7 @@ def student_menu():
         elif selection_2 == 2:
             view_students()
         elif selection_2 == 3:
-            print('\nYou have selected Edit Student Details.  This part of the program is yet to be written.  Please make another selection.')
+            update_student()
         else:
             print('Invalid selection.  Please try again.')
 

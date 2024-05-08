@@ -65,7 +65,7 @@ def add_student():
 
 def select_student():
     # Find and return a single valid student name
-     with open('students.json') as f:
+    with open('students.json') as f:
         students = json.load(f)
         # Sort students by name
         students_sorted = sorted(students, key=lambda d: d['name'])
@@ -89,8 +89,8 @@ def select_student():
         return name
 
 
-def print_student_details(student):
-    print(f"\nSTUDENT: {student['name']}")
+def print_student_details(student: dict):
+    print(f"STUDENT: {student['name']}")
     print(f"Email: {student['email']}")
     print(f"Mobile: {student['mobile']}")
 
@@ -114,54 +114,79 @@ def view_students():
     with open('students.json') as f:
         students = json.load(f)
         students_sorted = sorted(students, key=lambda d: d['name'])
-        # Display VIEW STUDENT DETAILS menu to user
-        print('\nVIEW STUDENT DETAILS')
-        print('[a]  View contact details for all students')
-        print('[s]  Select a single student')
-        # Get menu selection input from user
-        selection = input('\nEnter a or s to view student details:  ')
-        # Validate user input
-        while selection != 'a' and selection != 's':
-            selection = input("\nInvalid input. Enter 'a' to view all students or 's' to select a single student:  ")
-        # If a entered, display all students
-        if selection == 'a':
-            for student in students_sorted:
-                print_student_details(student)
-        # If s entered, run function to find & display details of single student
-        elif selection == 's':
-            view_student_deatils()
+
+    # Display VIEW STUDENT DETAILS menu to user
+    print('\nVIEW STUDENT DETAILS')
+    print('[a]  View contact details for all students')
+    print('[s]  Select a single student')
+
+    # Get menu selection input from user
+    selection = input('\nEnter a or s to view student details:  ')
+
+    # Validate user input
+    while selection != 'a' and selection != 's':
+        selection = input("\nInvalid input. Enter 'a' to view all students or 's' to select a single student:  ")
+    
+    # If a entered, display all students
+    if selection == 'a':
+        for student in students_sorted:
+            print_student_details(student)
+    # If s entered, run function to find & display details of single student
+    elif selection == 's':
+        view_student_deatils()
 
 
 def update_student():
+    # Call function to get name from user and check its validity
     name = select_student()
+    # Load student data
+    with open('students.json') as f:
+        students = json.load(f)
+    print('\nCURRENT STUDENT DETAILS:')
+    # Find matching student and print its data
+    for student in students:
+        if student['name'].lower() == name.lower():
+            print_student_details(student)
+    # Print UPDATE STUDENT DETAILS menu
     print('\nUPDATE STUDENT DETAILS')
     print('[n]  Update name')
     print('[e]  Update email')
-    print('[m]  Update movile')
+    print('[m]  Update mobile')
+    print('[0]  Return to Student Menu')
+    # Get menu selection from user
     selection = input('\nEnter n, e or m to update student details:  ')
-    # print(selection)
 
-    while selection != 'n' and selection != 'e' and selection != 'm':
-        selection = input("\nInvalid input. Enter 'n', 'e', or 'm' (see details above):  ")
-    # UP TO HERE:  Prob need to load whole .json at start - remember
-    # will need to write whole file back after updating element of single dictionary in list
-    
-    # Load existing students.json data
-    with open('students.json') as f:
-        students = json.load(f)
+    # Unless user entered 0 to return to previous menu, check input is valid
+    while selection != '0':
+        # Instruct user to try again, until they enter a valid selection
+        while selection != 'n' and selection != 'e' and selection != 'm':
+            selection = input("Invalid input. Enter 'n', 'e', or 'm' (see Menu options above):  ")
+            # Exit loop if 0 is entered
+            if selection == '0':
+                break
+        
+        student_found = False
+        while student_found == False:
+            for student in students:
+                if student['name'].lower() == name.lower():
+                    student_found = True
+                    if selection == 'n':            
+                        print(f"Name: {student['name']}")
+                    elif selection == 'e':
+                        new_email = input('Enter new email:  ')
+                        student['email'] = new_email
+                        print(f"{student['name']}'s email will be updated to: {student['email']}")
+                    elif selection == 'm':
+                        # new_email = input('Enter new email:  ')
+                        # student['email'] = new_email
+                        # print(f"{student['name']}'s email will be updated to: {student['email']}")
+                        print(f"Mobile: {student['mobile']}\n")
 
-        if selection == 'n':
-            print(student['name'])
-        elif selection == 'e':
-            print(f"Email: {student['email']}")
-        elif selection == 'm':
-            print(f"Mobile: {student['mobile']}\n")
-
-    # Output updated data back to students .json
-    with open('students.json', 'w') as f:
-        json.dump(students, f, indent=4)
-
-
+            # Output updated data back to students .json
+            with open('students.json', 'w') as f:
+                json.dump(students, f, indent=4)
+        break
+        
 
 if __name__ == '__main__':
     # view_students()
