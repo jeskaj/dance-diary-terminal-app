@@ -1,5 +1,5 @@
 from student import add_student, view_students
-from syllabus import view_syllabus
+from syllabus import view_syllabus, view_dance
 
 
 # DELETE THIS - Error text for later use: 'Invalid input - you must enter a numeric option from the menu.'
@@ -16,8 +16,8 @@ def print_main_menu():
 def print_syllabus_menu():
     # Prints 2nd level SYLLABUS MENU options
     print('\nSYLLABUS MENU:')
-    print('[1]  View Syllabus')
-    print('[2]  Filter Syllabus')
+    print('[1]  View Entire Syllabus')
+    print('[2]  View Syllabus by Dance')
     print('[0]  Return to Main Menu\n')
 
 
@@ -48,7 +48,7 @@ def syllabus_menu():
         if selection_2 == 1:
             view_syllabus('syllabus.json')
         elif selection_2 == 2:
-            print(f'\nYou selected {selection_2} - this functionality is yet to be written.  Please make another selection.') # FINISH THIS MENU PROCESS
+            view_dance('syllabus.json')
         else:
             print('Invalid selection.  Please try again.')
         
@@ -78,7 +78,7 @@ def lesson_menu():
     selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
     
     while selection_2 !=0:
-        print(f'\nYou selected {selection_2} - this functionality is yet to be written.  Please make another selection.') # FINISH THIS MENU PROCESS
+        print(f'\nYou selected {selection_2} - Coming soon!  This functionality will be released in a future update.  Please make another selection.') # FINISH THIS MENU PROCESS
         print_lesson_menu()
         selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
 
