@@ -43,41 +43,35 @@ def add_student():
     # Create list of student names
     student_names = [name['name'].lower() for name in students]
     
-    while name != '0':
+    if name != '0':
         # Check if name input is in list of existing student names
-        name_valid = False
-        while name_valid == False:
-            if name.lower() in student_names:
-                name = input(f"\n*** ERROR:  Student with name {name} already exists.  Please enter a different name, or 0 to cancel:  ")
-                print(name)
-                print(name == '0')
-            else:
-                name_valid = True
+        if name.lower() in student_names:
+            print(f"\n*** ERROR:  Student with name {name} already exists.  Cannot add student. ***")
+        else:
+            email = input("Enter student's email: ")
+            mobile = input("Enter student's mobile phone number: ")
+            # Create new instance of Student using user input
+            new_student = Student(name, email, mobile)
+            # Store new student details in dicitonary format
+            new_student_dict = {
+                'name': name,
+                'email': email,
+                'mobile': mobile
+            }
 
-        email = input("Enter student's email: ")
-        mobile = input("Enter student's mobile phone number: ")
-        # Create new instance of Student using user input
-        new_student = Student(name, email, mobile)
-        # Store new student details in dicitonary format
-        new_student_dict = {
-            'name': name,
-            'email': email,
-            'mobile': mobile
-        }
+            # Load existing students.json data
+            with open('students.json') as f:
+                students = json.load(f)
+                # Append new student data to existing data
+                students.append(new_student_dict)
+            # Output updated data back to students.json
+            with open('students.json', 'w') as f:
+                json.dump(students, f, indent=4)
 
-        # Load existing students.json data
-        with open('students.json') as f:
-            students = json.load(f)
-            # Append new student data to existing data
-            students.append(new_student_dict)
-        # Output updated data back to students.json
-        with open('students.json', 'w') as f:
-            json.dump(students, f, indent=4)
-
-        # Print confirmation message displaying new student details and total number of students now stored
-        print('\nYou have added a new student with the following details:\n')
-        print(f'Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}')
-        print(f'\nYour total number of students is now: {len(students)}')
+            # Print confirmation message displaying new student details and total number of students now stored
+            print('\nYou have added a new student with the following details:\n')
+            print(f'Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}')
+            print(f'\nYour total number of students is now: {len(students)}')
 
 
 def select_student():
