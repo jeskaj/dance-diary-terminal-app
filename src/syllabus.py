@@ -1,19 +1,14 @@
-import csv, json
+import json
 
-def import_csv_syllabus(filename):
-    # Function to input .csv of syllabus data and transform into a list of dictionaries
+def view_syllabus(filename):
+    # Function to view syllabus data stored in .json file
     with open(filename) as f:
-        reader = csv.DictReader(f)
-        syllabus_list = []
-        for row in reader:
-            syllabus_list.append(row)
-        return(syllabus_list)
-    
-def create_json_syllabus(syllabus_list_of_dicts):
-    # function to output list of dictionaries as .json file
-    with open('syllabus.json', 'w') as f:
-        json.dump(syllabus_list_of_dicts, f, indent=4)
+        syllabus = json.load(f)
+    for step in syllabus:
+        print(f"{step['dance']} - Level {step['level']}: {step['step']}")
+        # for key, value in element:
+        #     print(f'{key}: {value}')
 
-# Code for creating initial syllabus data
-# new_syllabus = import_csv_syllabus('syllabus.csv')
-# create_json_syllabus(new_syllabus)
+# print(view_syllabus('syllabus.json'))
+# view_syllabus('syllabus.json')
+# print(view_syllabus('syllabus.json'))

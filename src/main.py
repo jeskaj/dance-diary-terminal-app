@@ -1,4 +1,6 @@
-from student import Student, add_student, view_students
+from student import add_student, view_students
+from syllabus import view_syllabus
+
 
 # DELETE THIS - Error text for later use: 'Invalid input - you must enter a numeric option from the menu.'
 
@@ -43,10 +45,15 @@ def syllabus_menu():
     selection_2 = int(input('Please enter 1, 2 or 0: '))
 
     while selection_2 !=0:
-        print(f'\nYou selected {selection_2} - this functionality is yet to be written.  Please make another selection.') # FINISH THIS MENU PROCESS
+        if selection_2 == 1:
+            view_syllabus('syllabus.json')
+        elif selection_2 == 2:
+            print(f'\nYou selected {selection_2} - this functionality is yet to be written.  Please make another selection.') # FINISH THIS MENU PROCESS
+        else:
+            print('Invalid selection.  Please try again.')
+        
         print_syllabus_menu()
         selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
-
 
 def student_menu():
     print_student_menu()

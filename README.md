@@ -1,7 +1,7 @@
-# T1A3 Terminal Application:  Dancing Diary
+# T1A3 Terminal Application:  Dance Diary
 
 ## Overview & Purpose
-**Dancing Diary** is a terminal application to assist dance teachers by storing their students' contact information, creating lesson plans and keep track of students’ progress through the syllabus.
+**Dance Diary** is a terminal application to assist dance teachers by storing their students' contact information, creating lesson plans and keep track of students’ progress through the syllabus.
 
 ## Source Code Repository
 

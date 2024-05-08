@@ -122,7 +122,7 @@
     {
         "dance": "Rumba",
         "level": "2",
-        "step": "Open Break UAT"
+        "step": "OpenBreakUnderarmTurn"
     },
     {
         "dance": "Rumba",
@@ -162,7 +162,7 @@
     {
         "dance": "Rumba",
         "level": "3",
-        "step": "5th Position Breaks with Turn"
+        "step": "5thPositionBreakswithTurn"
     },
     {
         "dance": "Rumba",
@@ -232,7 +232,7 @@
     {
         "dance": "Cha Cha",
         "level": "2",
-        "step": "Open Break UAT"
+        "step": "OpenBreakUnderarmTurn"
     },
     {
         "dance": "Cha Cha",
@@ -327,7 +327,7 @@
     {
         "dance": "EC Swing",
         "level": "2",
-        "step": "American Spin from Handshake"
+        "step": "AmericanSpinfromHandshake"
     },
     {
         "dance": "EC Swing",
