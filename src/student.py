@@ -3,7 +3,7 @@ This module defines the class Student and functions related to creating, viewing
 """
 
 import json
-from repertoire import new_repertoire
+from repertoire import new_repertoire, view_repertoire
 
 
 class Student:
@@ -123,6 +123,7 @@ def view_student_deatils():
             # Print student details, where input name is found in list of student names
             if student['name'].lower() == name.lower():
                 print_student_details(student)
+                view_repertoire(student['name'])
 
 
 def view_students():
@@ -134,7 +135,7 @@ def view_students():
     # Display VIEW STUDENT DETAILS menu to user
     print('\nVIEW STUDENT DETAILS')
     print('[a]  View contact details for all students')
-    print('[s]  Select a single student')
+    print('[s]  Select a single student to view contact details & repertoire progress')
 
     # Get menu selection input from user
     selection = input('\nEnter a or s to view student details:  ')

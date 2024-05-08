@@ -76,5 +76,11 @@
         "email": "dholland@outlook.com",
         "mobile": "0425 293 749",
         "repertoire": "DonaldHolland.json"
+    },
+    {
+        "name": "Sarah Rogers",
+        "email": "srogers@tpg.com.au",
+        "mobile": "0423 282 729",
+        "repertoire": "SarahRogers.json"
     }
 ]

@@ -25,8 +25,9 @@ def print_student_menu():
     # Prints 2nd level STUDENT MENU options
     print('\nSTUDENT MENU:')
     print('[1]  Add New Student')
-    print('[2]  View Student Details')
-    print('[3]  Update Student Details')
+    print('[2]  View Student Contact Details & Repertoire')
+    print('[3]  Update Student Contact Details')
+    print('[4]  Update Student Repertoire Progress')
     print('[0]  Return to Main Menu\n')
 
 
@@ -66,6 +67,8 @@ def student_menu():
             view_students()
         elif selection_2 == 3:
             update_student()
+        elif selection_2 == 4:
+            print(f'\nYou selected {selection_2} - Coming soon!  This functionality will be released in a future update.  Please make another selection.')
         else:
             print('Invalid selection.  Please try again.')
 
@@ -78,7 +81,7 @@ def lesson_menu():
     selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
     
     while selection_2 !=0:
-        print(f'\nYou selected {selection_2} - Coming soon!  This functionality will be released in a future update.  Please make another selection.') # FINISH THIS MENU PROCESS
+        print(f'\nYou selected {selection_2} - Coming soon!  This functionality will be released in a future update.  Please make another selection.')
         print_lesson_menu()
         selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
 
