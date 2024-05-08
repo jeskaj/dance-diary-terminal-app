@@ -3,6 +3,7 @@ This module defines the class Student and functions related to creating, viewing
 """
 
 import json
+from repertoire import new_repertoire
 
 
 class Student:
@@ -25,7 +26,6 @@ class Student:
         self.name = name
         self.email = email
         self.mobile = mobile
-        # self.repertoire = f"{name.strip()}.json"
 
 
 # Functions for accessing & operating on Student data stored in students.json
@@ -56,7 +56,8 @@ def add_student():
             new_student_dict = {
                 'name': name,
                 'email': email,
-                'mobile': mobile
+                'mobile': mobile,
+                'repertoire': f"{name}.json".replace(' ', '')
             }
 
             # Load existing students.json data
@@ -68,9 +69,13 @@ def add_student():
             with open('students.json', 'w') as f:
                 json.dump(students, f, indent=4)
 
+            # Create repertoire file for new student
+            new_repertoire(new_student_dict['repertoire'])
+
             # Print confirmation message displaying new student details and total number of students now stored
             print('\nYou have added a new student with the following details:\n')
             print(f'Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}')
+            print(f"{new_student.name}'s repertoire is stored in the file {new_student_dict['repertoire']}")
             print(f'\nYour total number of students is now: {len(students)}')
 
 

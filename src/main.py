@@ -10,7 +10,7 @@ def print_main_menu():
     print('[1]  Syllabus')
     print('[2]  Students')
     print('[3]  Lessons')
-    print('[0]  Exit program\n')
+    print('[0]  Exit Program\n')
 
 
 def print_syllabus_menu():
@@ -24,18 +24,18 @@ def print_syllabus_menu():
 def print_student_menu():
     # Prints 2nd level STUDENT MENU options
     print('\nSTUDENT MENU:')
-    print('[1]  Add new student')
-    print('[2]  View student details')
-    print('[3]  Update student details')
+    print('[1]  Add New Student')
+    print('[2]  View Student Details')
+    print('[3]  Update Student Details')
     print('[0]  Return to Main Menu\n')
 
 
 def print_lesson_menu():
     # Prints 2nd level LESSON MENU options
     print('\nLESSON MENU:')
-    print('[1]  Add lesson')
-    print('[2]  View lessons')
-    print('[3]  Update lesson')
+    print('[1]  Add Lesson')
+    print('[2]  View Lessons')
+    print('[3]  Update Lesson')
     print('[0]  Return to Main Menu\n')
 
 

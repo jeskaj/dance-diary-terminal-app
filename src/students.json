@@ -1,77 +1,80 @@
 [
     {
-        "name": "Kate Thomas",
-        "email": "kthomas@gmail.com",
-        "mobile": "0123 456 789"
+        "name": "Kate Thomason",
+        "email": "kthomason@gmail.com",
+        "mobile": "0123 456 789",
+        "repertoire": "KateThomason.json"
     },
     {
-        "name": "Andrea Turner",
-        "email": "aturner@yahoo.com.au",
-        "mobile": "0431 296 294"
+        "name": "Andrea Tucker",
+        "email": "atucker@yahoo.com.au",
+        "mobile": "0431 296 294",
+        "repertoire": "AndreaTucker.json"
     },
     {
         "name": "Bob Smith",
         "email": "bob@mail.com",
-        "mobile": "3833 939 339"
+        "mobile": "3833 939 339",
+        "repertoire": "BobSmith.json"
     },
     {
         "name": "Mark Brown",
         "email": "markbrown@gmail.com",
-        "mobile": "0431 937 294"
+        "mobile": "0431 937 294",
+        "repertoire": "MarkBrown.json"
     },
     {
-        "name": "Jessica Jakeman",
-        "email": "jwjakeman@yahoo.com.au",
-        "mobile": "0425 30 60 21"
-    },
-    {
-        "name": "Tristan Johnson",
+        "name": "Tristan James",
         "email": "tj@mail.com",
-        "mobile": "0425 987 654"
+        "mobile": "0425 987 654",
+        "repertoire": "TristanJames.json"
     },
     {
-        "name": "Amanda Tibbett",
-        "email": "ajtibbet@outlook.com",
-        "mobile": "0431 123 456"
+        "name": "Amanda Rogers",
+        "email": "ajrogerst@outlook.com",
+        "mobile": "0431 123 456",
+        "repertoire": "AmandaRogers.json"
     },
     {
         "name": "Rebecca Smith",
         "email": "rsmith@email.com.au",
-        "mobile": "0431 123 456"
-    },
-    {
-        "name": "Erika Jakeman",
-        "email": "erikaj@tpg.com.au",
-        "mobile": "0431 731 734"
-    },
-    {
-        "name": "Mathew Tibbett",
-        "email": "mctibbet@outlook.com",
-        "mobile": "0431 383 282"
-    },
-    {
-        "name": "Jade Tibbett",
-        "email": "jet@yahoo.com.au",
-        "mobile": "0423 383 393"
-    },
-    {
-        "name": "Peter Kenzler",
-        "email": "pkenzler@trainman.com",
-        "mobile": "0431 920 272"
+        "mobile": "0431 123 456",
+        "repertoire": "RebeccaSmith.json"
     },
     {
         "name": "Mary Smith",
         "email": "mjsmith@hotmail.com",
-        "mobile": "0437 937 205"
+        "mobile": "0437 937 205",
+        "repertoire": "MarySmith.json"
     },
     {
         "name": "Jane Doe",
         "email": "jdoe@mysterywoman.com",
-        "mobile": "0405 928 273"
+        "mobile": "0405 928 273",
+        "repertoire": "JaneDoe.json"
     },
     {
         "name": "John Doe",
         "email": "jdoe@mysteryman.com",
-        "mobile": "0435 298 292"
+        "mobile": "0435 298 292",
+        "repertoire": "JohnDoe.json"
+    },
+    {
+        "name": "Helen Brown",
+        "email": "hbrown@email.com",
+        "mobile": "8383 292 828",
+        "repertoire": "HelenBrown.json"
+    },
+    {
+        "name": "Penny Piper",
+        "email": "ppiper@hotmail.com.au",
+        "mobile": "0431 383 929",
+        "repertoire": "PennyPiper.json"
+    },
+    {
+        "name": "Donald Holland",
+        "email": "dholland@outlook.com",
+        "mobile": "0425 293 749",
+        "repertoire": "DonaldHolland.json"
     }
 ]

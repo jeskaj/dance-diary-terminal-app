@@ -33,6 +33,15 @@ def view_student_details_V1():
                 print(f"Mobile: {student['mobile']}\n")
 
 
+# Adding 'repertoire' filename to existing students
+def add_repertoire_existing_students():
+    with open('students.json') as f:
+        students = json.load(f)
+    for student in students:
+        student['repertoire'] = f"{student['name']}.json".replace(' ', '')
+    with open('students.json', 'w') as f:
+        json.dump(students, f, indent=4)
+
 # From syllabus.py
 
 # Original simple function that returns syllabus data in raw list of dictionaries format
@@ -41,3 +50,13 @@ def view_syllabus(filename):
     with open(filename) as f:
         syllabus_list_of_dicts = json.load(f)
         return syllabus_list_of_dicts
+    
+
+# From repertoire.py
+
+def create_repertoires():
+    with open('students.json') as f:
+        students = json.load(f)
+    for student in students:
+        # Call function to create repertoire file for each existing student
+        new_repertoire(student['name'])

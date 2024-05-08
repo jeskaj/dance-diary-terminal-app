@@ -1,3 +1,7 @@
+"""
+This module defines functions for working with dance Syllabus
+"""
+
 import json, string
 
 
@@ -72,4 +76,5 @@ if __name__ == '__main__':
     # view_syllabus('syllabus.json')
     # print(view_syllabus('syllabus.json'))
     # print_dances('syllabus.json')
-    view_dance('syllabus.json')
+    # view_dance('syllabus.json')
+    pass
