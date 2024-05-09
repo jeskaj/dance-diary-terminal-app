@@ -12,40 +12,10 @@
         "repertoire": "AndreaTucker.json"
     },
     {
-        "name": "Bob Smith",
-        "email": "bob@mail.com",
-        "mobile": "3833 939 339",
-        "repertoire": "BobSmith.json"
-    },
-    {
-        "name": "Mark Brown",
-        "email": "markbrown@gmail.com",
-        "mobile": "0431 937 294",
-        "repertoire": "MarkBrown.json"
-    },
-    {
-        "name": "Tristan James",
-        "email": "tj@mail.com",
-        "mobile": "0425 987 654",
-        "repertoire": "TristanJames.json"
-    },
-    {
-        "name": "Amanda Rogers",
-        "email": "ajrogerst@outlook.com",
-        "mobile": "0431 123 456",
-        "repertoire": "AmandaRogers.json"
-    },
-    {
         "name": "Rebecca Smith",
         "email": "rsmith@email.com.au",
         "mobile": "0431 123 456",
         "repertoire": "RebeccaSmith.json"
-    },
-    {
-        "name": "Mary Smith",
-        "email": "mjsmith@hotmail.com",
-        "mobile": "0437 937 205",
-        "repertoire": "MarySmith.json"
     },
     {
         "name": "Jane Doe",
@@ -66,21 +36,51 @@
         "repertoire": "HelenBrown.json"
     },
     {
-        "name": "Penny Piper",
-        "email": "ppiper@hotmail.com.au",
-        "mobile": "0431 383 929",
-        "repertoire": "PennyPiper.json"
-    },
-    {
-        "name": "Donald Holland",
-        "email": "dholland@outlook.com",
-        "mobile": "0425 293 749",
-        "repertoire": "DonaldHolland.json"
-    },
-    {
         "name": "Sarah Rogers",
         "email": "srogers@outlook.com",
         "mobile": "0423 282 729",
         "repertoire": "SarahRogers.json"
+    },
+    {
+        "name": "George Thomas",
+        "email": "gthomas@gmail.com",
+        "mobile": "0482 928 292",
+        "repertoire": "georgethomas.json"
+    },
+    {
+        "name": "George Test",
+        "email": "gtest@gmail.com",
+        "mobile": "0482 828 272",
+        "repertoire": "georgetest.json"
+    },
+    {
+        "name": "Andrew Test",
+        "email": "atest@outlook.com",
+        "mobile": "0483 929 282",
+        "repertoire": "andrewtest.json"
+    },
+    {
+        "name": "Leonie Baker",
+        "email": "lbaker@yahoo.com.au",
+        "mobile": "0483 028 282",
+        "repertoire": "leoniebaker.json"
+    },
+    {
+        "name": "Amy Anderson",
+        "email": "aanderson@gmail.com",
+        "mobile": "0482 928 282",
+        "repertoire": "amyanderson.json"
+    },
+    {
+        "name": "William Wallace",
+        "email": "wally@gmail.com",
+        "mobile": "0483 028 028",
+        "repertoire": "williamwallace.json"
+    },
+    {
+        "name": "Tony Stark",
+        "email": "ironman@starkindustries.com",
+        "mobile": "0483 928 028",
+        "repertoire": "tonystark.json"
     }
 ]

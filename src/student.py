@@ -3,7 +3,7 @@ This module defines the class Student and functions related to creating, viewing
 """
 
 import json
-from repertoire import new_repertoire, view_repertoire, update_repertoire
+from repertoire import repertoire_filename, new_repertoire, view_repertoire, update_repertoire
 
 
 class Student:
@@ -36,47 +36,55 @@ def add_student():
     """
     # Get student details via user input
     print('\n*** CREATE NEW STUDENT ***')
-    name = input("Enter student's full name (or 0 to quit): ")
-    # Check a student with name entered does not already exist
-    with open('students.json') as f:
-        students = json.load(f)
-    # Create list of student names
-    student_names = [name['name'].lower() for name in students]
+    name = input("Enter student's full name (or 0 to cancel): ")
     
+    # Unless user entered 0 to return to previous menu, check input is valid
     if name != '0':
+        # Check that a student with name entered does not already exist
+        with open('students.json') as f:
+            students = json.load(f)
+        # Create list of student names
+        student_names = [name['name'].lower() for name in students]
+
         # Check if name input is in list of existing student names
         if name.lower() in student_names:
             print(f"\n*** ERROR:  Student with name {name} already exists.  Cannot add student. ***")
         else:
             email = input("Enter student's email: ")
             mobile = input("Enter student's mobile phone number: ")
-            # Create new instance of Student using user input
-            new_student = Student(name, email, mobile)
-            # Store new student details in dicitonary format
-            new_student_dict = {
-                'name': name,
-                'email': email,
-                'mobile': mobile,
-                'repertoire': f"{name}.json".replace(' ', '')
-            }
+            # Give user opportunity to confirm info is correct before creating student
+            print('\n*** Please check that the following details are correct - student name cannot be changed once created ***\n')
+            print(f'Name: {name}\nEmail: {email}\nMobile: {mobile}')
+            # Get user input to confirm user creation
+            proceed = input('\nEnter y to create this student, or any other key to cancel:  ')
 
-            # Load existing students.json data
-            with open('students.json') as f:
-                students = json.load(f)
-                # Append new student data to existing data
-                students.append(new_student_dict)
-            # Output updated data back to students.json
-            with open('students.json', 'w') as f:
-                json.dump(students, f, indent=4)
+            if proceed == 'y':
+                # Create new instance of Student using user input
+                new_student = Student(name, email, mobile)
+                # Store new student details in dicitonary format
+                new_student_dict = {
+                    'name': name,
+                    'email': email,
+                    'mobile': mobile,
+                    'repertoire': repertoire_filename(name)
+                }
 
-            # Create repertoire file for new student
-            new_repertoire(new_student_dict['repertoire'])
+                # Load existing students.json data
+                with open('students.json') as f:
+                    students = json.load(f)
+                    # Append new student data to existing data
+                    students.append(new_student_dict)
+                # Output updated data back to students.json
+                with open('students.json', 'w') as f:
+                    json.dump(students, f, indent=4)
 
-            # Print confirmation message displaying new student details and total number of students now stored
-            print('\nYou have added a new student with the following details:\n')
-            print(f'Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}')
-            print(f"{new_student.name}'s repertoire is stored in the file {new_student_dict['repertoire']}")
-            print(f'\nYour total number of students is now: {len(students)}')
+                # Create repertoire file for new student
+                new_repertoire(new_student_dict['repertoire'])
+
+                # Print confirmation message displaying new student details and total number of students now stored
+                print('\nYou have added a new student with the following details:\n')
+                print(f'Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}')
+                print(f'\nYour total number of students is now: {len(students)}')
 
 
 def select_student():
@@ -150,6 +158,8 @@ def view_students():
         for student in students_sorted:
             print_student_details(student)
 
+        print(f'\nTOTAL STUDENTS: {len(students)}')
+
     # If s entered, run function to find & display contact detail & repertoire of single student
     elif selection == 's':
         # Call function to find & display details of chosen student
@@ -217,7 +227,9 @@ def update_student_repertoire():
 
 
 if __name__ == '__main__':
+    add_student()
     # view_students()
     # view_student_deatils()
     # update_student()
+    # print(student_name_check(''))
     pass

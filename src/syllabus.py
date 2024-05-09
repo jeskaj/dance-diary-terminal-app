@@ -2,7 +2,8 @@
 This module defines functions for working with dance Syllabus
 """
 
-import json, string
+import json
+import string
 
 
 def print_step(step):

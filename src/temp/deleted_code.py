@@ -32,6 +32,35 @@ def view_student_details_V1():
                 print(f"Email: {student['email']}")
                 print(f"Mobile: {student['mobile']}\n")
 
+# Changing new student validation
+if name != '0':
+        # Check that a student with name entered does not already exist
+        if student_name_check(name) == True:
+            name = (f"\n*** ERROR:  Student with name {name} already exists.  Please enter a different name (or 0 to cancel):  ")
+
+
+def student_name_check(name: str):
+    """ Checks that a student of the name entered does not already exist
+
+    Returns
+    -------
+    bool :
+        Returns True if a student of the name entered already exists
+    """
+    with open('students.json') as f:
+        students = json.load(f)
+    # Create list of student names
+    student_names = [name['name'].lower() for name in students]
+    # Check if name input is in list of student names
+    if name.lower() in student_names:
+        return True
+    else:
+        return False
+
+
+# New Student - removed test line that prints name of repertoire .json file created
+print(f"{new_student.name}'s repertoire is stored in the file {new_student_dict['repertoire']}")
+
 
 # Started writing code to incorporate Edit/Update functionality within View functionality ie view_students() function
 # Not sure how to achieve passing student selection from one function to another, decided to leave as separate functions

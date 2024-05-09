@@ -3,20 +3,36 @@ This module defines functions for working with Students' Repertoires
 """
 
 import json
+import string
 from syllabus import print_step, dance_set
 
 
-def new_repertoire(student_name: str):
+def repertoire_filename(student_name):
+    """Function to format name of student into name of .json repertoire file for that student
+
+    Parameters
+    ----------
+    student_name : str
+        Name of student
+
+    Returns
+    -------
+    str :
+        Name of .json repertoire file for student
+    """
+    return f"{student_name}.json".replace(' ', '').lower()
+    
+
+def new_repertoire(filename: str):
     """
     Create repertoire file for new student, based on current Syllabus
     """
-    # Load syllabus data and store in local variable
+    # Load current syllabus data and store in local variable
     with open('syllabus.json') as f:
         repertoire = json.load(f)
-    # For each step in the repertoire, add keys 'started' and 'competent'
+    # For each step in the repertoire, add 'status' with value 'New'
     for step in repertoire:
         step['status'] = 'New'
-    filename = f"{student_name}".replace(' ', '')
     # print(filename)
     with open(f'repertoire/{filename}', 'w') as f:
         json.dump(repertoire, f, indent = 4)
@@ -52,9 +68,9 @@ def view_repertoire(student_name: str):
     """
     Display repertoire of Started and Competent steps for student
     """
-    filename = f"{student_name}".replace(' ', '')
+    filename = repertoire_filename(student_name)
     # Load data from repertoire .json file based on student name provided
-    with open(f'repertoire/{filename}.json') as f:
+    with open(f'repertoire/{filename}') as f:
         repertoire = json.load(f)
     
     # Display dances student has learnt and is in the process of learning
@@ -93,7 +109,7 @@ def select_dance(repertroire_filepath: str):
     # Display list of available dances
     print('\nAVAILABLE DANCES:')
     for dance in dances:
-        print(dance.capitalize())
+        print(string.capwords(dance))
     # Get user selection
     dance_selection = input('\nEnter a dance from the above list:  ')
 
@@ -113,7 +129,7 @@ def update_repertoire(student_name):
     or indicate when student becomes competent in a step (ie update status from Started to Competent)
     """
     # Load student's repertoire and store in local variable
-    filename = f"{student_name}".replace(' ', '')
+    filename = f"{student_name}".replace(' ', '').lower()
     with open(f'repertoire/{filename}.json') as f:
         repertoire = json.load(f)
     
@@ -127,10 +143,10 @@ def update_repertoire(student_name):
     
     while selection != 0:
         # Check input validity
-        if selection not in ('a', 'u'):
+        while selection not in ('a', 'u'):
             selection = input('\nINPUT INVALID:  Please eEnter a, u or 0 (refer menu above):  ')
 
-        elif selection == 'a':
+        if selection == 'a':
             # Call function to display available dances & input a selection
             # GETTING STUCK IN A LOOP HERE????
             dance_selection = select_dance(f'repertoire/{filename}.json')
