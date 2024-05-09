@@ -19,6 +19,7 @@ def new_repertoire(student_name):
     with open(f'repertoire/{filename}', 'w') as f:
         json.dump(repertoire, f, indent = 4)
 
+
 def view_repertoire(student_name):
     filename = f"{student_name}".replace(' ', '')
     # Load data from repertoire .json file based on student name provided
@@ -45,17 +46,25 @@ def view_repertoire(student_name):
     # Display steps currently in progress
     current_steps_sorted = sorted(current_steps, key=lambda d: d['dance'])
     if len(current_steps) != 0:
-        print('\nSteps in progress (currently learning):')
+        print('\nSTEPS IN PROGRESS (currently learning):')
         for step in current_steps_sorted:
             print_step(step)
 
     # Display steps student has completed
     completed_steps_sorted = sorted(completed_steps, key=lambda d: d['dance'])
     if len(completed_steps) != 0:
-        print('\nSteps completed (student is competent in these steps):')
+        print('\nSTEPS COMPLETED (student is competent in these steps):')
         for step in completed_steps_sorted:
             print_step(step)
 
+
+def update_repertoire(student_name):
+    print('\nOPTIONS:')
+    print('[a]  Add new step')
+    print('[u]  Update status of current step/s')
+    print('[0]  Return to Student Menu')
+    selection = input('Enter a, u or 0:  ')
+    print(selection)
 
 if __name__ == '__main__':
     view_repertoire('Andrea Tucker')

@@ -3,7 +3,7 @@ This module defines the class Student and functions related to creating, viewing
 """
 
 import json
-from repertoire import new_repertoire, view_repertoire
+from repertoire import new_repertoire, view_repertoire, update_repertoire
 
 
 class Student:
@@ -90,7 +90,7 @@ def select_student():
     # Create variable to track whether or not student name has been found
     student_found = False
     # Get student name from user
-    name = input('Enter name of student:  ')
+    name = input('Enter name of student (or any key, to see a list of names):  ')
     # Check if name input is in list of student names
     if name.lower() in student_names:
         student_found = True
@@ -133,7 +133,7 @@ def view_students():
         students_sorted = sorted(students, key=lambda d: d['name'])
 
     # Display VIEW STUDENT DETAILS menu to user
-    print('\nVIEW STUDENT DETAILS')
+    print('\nVIEW STUDENT DETAILS:')
     print('[a]  View contact details for all students')
     print('[s]  Select a single student to view contact details & repertoire progress')
 
@@ -141,16 +141,18 @@ def view_students():
     selection = input('\nEnter a or s to view student details:  ')
 
     # Validate user input
-    while selection != 'a' and selection != 's':
-        selection = input("\nInvalid input. Enter 'a' to view all students or 's' to select a single student:  ")
+    while selection not in ('a', 's'):
+        selection = input("\nInvalid input. Enter a or s (refer above menu):  ")
     
-    # If a entered, display all students
+    # If a entered, display contact details of all students
     if selection == 'a':
         print('\nSTUDENT CONTACT DETAILS:')
         for student in students_sorted:
             print_student_details(student)
-    # If s entered, run function to find & display details of single student
+
+    # If s entered, run function to find & display contact detail & repertoire of single student
     elif selection == 's':
+        # Call function to find & display details of chosen student
         view_student_deatils()
 
 
@@ -203,7 +205,12 @@ def update_student():
                 json.dump(students, f, indent=4)
             print(confirmation_msg)
         break
-        
+
+
+def update_student_repertoire():
+    name = select_student()
+    update_repertoire(name)
+
 
 if __name__ == '__main__':
     # view_students()

@@ -1,4 +1,4 @@
-from student import add_student, view_students, update_student
+from student import add_student, view_students, update_student, update_student_repertoire
 from syllabus import view_syllabus, view_dance
 
 
@@ -9,7 +9,7 @@ def print_main_menu():
     print('\nMAIN MENU:')
     print('[1]  Syllabus')
     print('[2]  Students')
-    print('[3]  Lessons')
+    print('[3]  Lessons (Coming soon!)')
     print('[0]  Exit Program\n')
 
 
@@ -27,10 +27,11 @@ def print_student_menu():
     print('[1]  Add New Student')
     print('[2]  View Student Contact Details & Repertoire')
     print('[3]  Update Student Contact Details')
-    print('[4]  Update Student Repertoire Progress')
+    print('[4]  Update Student Repertoire')
     print('[0]  Return to Main Menu\n')
 
 
+# Lessons module not yet implemented
 def print_lesson_menu():
     # Prints 2nd level LESSON MENU options
     print('\nLESSON MENU:')
@@ -68,7 +69,7 @@ def student_menu():
         elif selection_2 == 3:
             update_student()
         elif selection_2 == 4:
-            print(f'\nYou selected {selection_2} - Coming soon!  This functionality will be released in a future update.  Please make another selection.')
+            update_student_repertoire()
         else:
             print('Invalid selection.  Please try again.')
 
@@ -77,13 +78,9 @@ def student_menu():
 
 
 def lesson_menu():
-    print_lesson_menu()
-    selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
-    
-    while selection_2 !=0:
-        print(f'\nYou selected {selection_2} - Coming soon!  This functionality will be released in a future update.  Please make another selection.')
-        print_lesson_menu()
-        selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
+    print('\n*** You selected [3] LESSONS ***')
+    print('This module will enable you to schedule lessons and create lesson plans for your students.')
+    print('It will be released in a future update. Please make another selection.')
 
 
 def main_menu():

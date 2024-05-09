@@ -33,6 +33,31 @@ def view_student_details_V1():
                 print(f"Mobile: {student['mobile']}\n")
 
 
+# Started writing code to incorporate Edit/Update functionality within View functionality ie view_students() function
+# Not sure how to achieve passing student selection from one function to another, decided to leave as separate functions
+        # Present menu options for updating student details
+        print('\nOPTIONS:')
+        print('[c]  Update contact details')
+        print('[r]  Update repertoire')
+        print('[0]  Return to Student Menu')
+        # Get user selection
+        selection2 = input('\nPlease enter c, r or 0:  ')
+
+        while selection2 != '0':
+            # Handle invalid input
+            if selection2 not in ('c', 'r'):
+                selection2 = input("\nInvalid input. Enter c, r or 0 (refer menu above):  ")
+            
+            # If c entered, call function to edit student contact details
+            elif selection2 == 'c':
+                update_student()
+
+            # If r entered, call function to update student repertoire
+            elif selection2 == 'r':
+                print('\nYou have selected Update Repertoire - functionality not yet completed.')
+                break 
+
+
 # Adding 'repertoire' filename to existing students
 def add_repertoire_existing_students():
     with open('students.json') as f:
