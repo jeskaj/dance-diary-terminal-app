@@ -123,13 +123,13 @@
         "dance": "Rumba",
         "level": "1",
         "step": "Box Step",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Rumba",
         "level": "1",
         "step": "Slow Underarm Turn",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Rumba",
@@ -243,193 +243,193 @@
         "dance": "Cha Cha",
         "level": "1",
         "step": "Basic in Place",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "1",
         "step": "Side Basic",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "1",
         "step": "Progressive Basic",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "1",
         "step": "Crossover Breaks",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "2",
         "step": "Outside Partner Breaks",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "2",
         "step": "Cross Body Lead",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "2",
         "step": "Open Break UAT",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "2",
         "step": "Chase Turns",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "2",
         "step": "Shoulder Check",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "2",
         "step": "Cross Body Lead to Reverse UAT",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "3",
         "step": "Shadow Positions",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "3",
         "step": "Butterfly",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "3",
         "step": "Alternating Underarm Turns",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "3",
         "step": "Three Cha Chas",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "3",
         "step": "Cross-Body Pull Back",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Cha Cha",
         "level": "3",
         "step": "Crossover Flick to Side Break",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "1",
         "step": "Basic",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "1",
         "step": "Underarm Turn",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "1",
         "step": "Basic Turning to Right and Left",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "1",
         "step": "Throwout",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "Triple Rhythm",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "American Spin from Double Handhold",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "Shoulder Check",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "Alternating Underarm Turn",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "Triple Rhythm",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "American Spin from Handshake",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "Cradle",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "2",
         "step": "Cradle with Points and Kicks",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "3",
         "step": "Cradle to Hammerlock",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "3",
         "step": "UAT with Shoulder Slide",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "3",
         "step": "Back & Forward Passes",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
         "level": "3",
         "step": "Back and Forward Passes with Turn",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",

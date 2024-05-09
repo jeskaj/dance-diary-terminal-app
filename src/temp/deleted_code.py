@@ -1,4 +1,5 @@
 import json
+import string
 
 # From student.py
 
@@ -33,10 +34,10 @@ def view_student_details_V1():
                 print(f"Mobile: {student['mobile']}\n")
 
 # Changing new student validation
-if name != '0':
-        # Check that a student with name entered does not already exist
-        if student_name_check(name) == True:
-            name = (f"\n*** ERROR:  Student with name {name} already exists.  Please enter a different name (or 0 to cancel):  ")
+# if name != '0':
+#         # Check that a student with name entered does not already exist
+#         if student_name_check(name) == True:
+#             name = (f"\n*** ERROR:  Student with name {name} already exists.  Please enter a different name (or 0 to cancel):  ")
 
 
 def student_name_check(name: str):
@@ -59,32 +60,32 @@ def student_name_check(name: str):
 
 
 # New Student - removed test line that prints name of repertoire .json file created
-print(f"{new_student.name}'s repertoire is stored in the file {new_student_dict['repertoire']}")
+# print(f"{new_student.name}'s repertoire is stored in the file {new_student_dict['repertoire']}")
 
 
 # Started writing code to incorporate Edit/Update functionality within View functionality ie view_students() function
 # Not sure how to achieve passing student selection from one function to another, decided to leave as separate functions
         # Present menu options for updating student details
-        print('\nOPTIONS:')
-        print('[c]  Update contact details')
-        print('[r]  Update repertoire')
-        print('[0]  Return to Student Menu')
-        # Get user selection
-        selection2 = input('\nPlease enter c, r or 0:  ')
+        # print('\nOPTIONS:')
+        # print('[c]  Update contact details')
+        # print('[r]  Update repertoire')
+        # print('[0]  Return to Student Menu')
+        # # Get user selection
+        # selection2 = input('\nPlease enter c, r or 0:  ')
 
-        while selection2 != '0':
-            # Handle invalid input
-            if selection2 not in ('c', 'r'):
-                selection2 = input("\nInvalid input. Enter c, r or 0 (refer menu above):  ")
+        # while selection2 != '0':
+        #     # Handle invalid input
+        #     if selection2 not in ('c', 'r'):
+        #         selection2 = input("\nInvalid input. Enter c, r or 0 (refer menu above):  ")
             
-            # If c entered, call function to edit student contact details
-            elif selection2 == 'c':
-                update_student()
+        #     # If c entered, call function to edit student contact details
+        #     elif selection2 == 'c':
+        #         update_student()
 
-            # If r entered, call function to update student repertoire
-            elif selection2 == 'r':
-                print('\nYou have selected Update Repertoire - functionality not yet completed.')
-                break 
+        #     # If r entered, call function to update student repertoire
+        #     elif selection2 == 'r':
+        #         print('\nYou have selected Update Repertoire - functionality not yet completed.')
+        #         break 
 
 
 # Adding 'repertoire' filename to existing students
@@ -114,3 +115,6 @@ def create_repertoires():
     for student in students:
         # Call function to create repertoire file for each existing student
         new_repertoire(student['name'])
+
+name = 'sarah rogers'
+print(string.capwords(name))

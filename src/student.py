@@ -98,7 +98,7 @@ def select_student():
     # Create variable to track whether or not student name has been found
     student_found = False
     # Get student name from user
-    name = input('Enter name of student (or any key, to see a list of names):  ')
+    name = input('\nEnter name of student (or any key, to see a list of names):  ')
     # Check if name input is in list of student names
     if name.lower() in student_names:
         student_found = True
@@ -183,16 +183,19 @@ def update_student():
     print('[m]  Update mobile')
     print('[0]  Return to Student Menu')
     # Get menu selection from user
-    selection = input('\nEnter n, e or m to update student details:  ')
+    selection = input('\nEnter e or m to update student details:  ')
 
     # Unless user entered 0 to return to previous menu, check input is valid
     while selection != '0':
         # Instruct user to try again, until they enter a valid selection
-        while selection != 'e' and selection != 'm':
-            selection = input("Invalid input. Enter 'n', 'e', or 'm' (see Menu options above):  ")
+        while selection not in ('e', 'm'):
+            selection = input("Invalid input. Enter e or m (see Menu options above):  ")
             # Exit loop if 0 is entered
             if selection == '0':
                 break
+        
+        if selection == '0':
+            break
         
         student_found = False
         while student_found == False:
