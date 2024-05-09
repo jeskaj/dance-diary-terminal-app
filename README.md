@@ -61,6 +61,43 @@ Note: Ensure that your features above allow you to demonstrate your understandin
 - View student information
 - Update student information
 
+STUDENT MENU:
+[1]  Add New Student
+[2]  View Student Contact Details & Repertoire
+[3]  Update Student Contact Details
+[4]  Update Student Repertoire Progress
+
+1. User selects student
+3. User selects from options to:
+  a) Add a new step
+    1. User is presented with a list of dances to choose from
+    2. User selects dance
+    3. User is presented a list of steps from the selected dance that may be added, which:
+      - if all steps for the dance are completed:
+        - advise user student has completed all steps for this dance
+        - end
+      - excludes steps already started or completed
+      - unless all level 1 steps are completed, excludes level 2 & 3 steps
+      - unless all level 2 steps are completed, excludes level 3 steps
+    4. User selects a step to be added
+    5. Step is added to student's repertoire with status Started
+
+  u) Update an existing step
+    1. User is presented with a list of dances to choose from
+    2. User selects dance
+    3. User is presented a list of steps from the selected dance that may be added, which:
+      - if all steps for the dance are completed:
+        - advise user student has completed all steps for this dance
+        - end
+      - excludes steps already started or completed
+      - unless all level 1 steps are completed, excludes level 2 & 3 steps
+      - unless all level 2 steps are completed, excludes level 3 steps
+    4. User selects a step to be added
+    5. Step is added to student's repertoire with status Started
+
+[0]  Return to Main Menu
+
+
 ### Lessons
 - Create lesson plan to store:
     - Student

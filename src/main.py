@@ -44,37 +44,37 @@ def print_lesson_menu():
 def syllabus_menu():
     # Enables user to make a selection from SYLLABUS MENU
     print_syllabus_menu()
-    selection_2 = int(input('Please enter 1, 2 or 0: '))
+    selection_2 = input('Please enter 1, 2 or 0: ')
 
-    while selection_2 !=0:
-        if selection_2 == 1:
+    while selection_2 != '0':
+        if selection_2 == '1':
             view_syllabus('syllabus.json')
-        elif selection_2 == 2:
+        elif selection_2 == '2':
             view_dance('syllabus.json')
         else:
             print('Invalid selection.  Please try again.')
         
         print_syllabus_menu()
-        selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
+        selection_2 = input('Please enter 1, 2, 3 or 0: ')
 
 def student_menu():
     print_student_menu()
-    selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
+    selection_2 = input('Please enter 1, 2, 3 or 0: ')
 
-    while selection_2 != 0:
-        if selection_2 == 1:
+    while selection_2 != '0':
+        if selection_2 == '1':
             add_student()
-        elif selection_2 == 2:
+        elif selection_2 == '2':
             view_students()
-        elif selection_2 == 3:
+        elif selection_2 == '3':
             update_student()
-        elif selection_2 == 4:
+        elif selection_2 == '4':
             update_student_repertoire()
         else:
             print('Invalid selection.  Please try again.')
 
         print_student_menu()
-        selection_2 = int(input('Please enter 1, 2, 3 or 0: '))
+        selection_2 = input('Please enter 1, 2, 3 or 0: ')
 
 
 def lesson_menu():
@@ -86,20 +86,20 @@ def lesson_menu():
 def main_menu():
     print('\nTo open your Dance Diary, please make a selection from the menu:')
     print_main_menu()
-    selection_1 = int(input('Please enter 1, 2, 3 or 0: '))
+    selection_1 = input('Please enter 1, 2, 3 or 0: ')
 
-    while selection_1 != 0:
-        if selection_1 == 1:
+    while selection_1 != '0':
+        if selection_1 == '1':
             syllabus_menu()
-        elif selection_1 == 2:
+        elif selection_1 == '2':
             student_menu()
-        elif selection_1 == 3:
+        elif selection_1 == '3':
             lesson_menu()
         else:
             print('\nInvalid selection.  Please try again.')
         
         print_main_menu()
-        selection_1 = int(input('Please enter 1, 2, 3 or 0: '))
+        selection_1 = input('Please enter 1, 2, 3 or 0: ')
     
     print('\nYou have closed your Dance Diary.  We hope you\'ll make another entry soon.  Goodbye!\n')
     quit()

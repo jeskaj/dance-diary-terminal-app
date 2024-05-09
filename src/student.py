@@ -208,6 +208,10 @@ def update_student():
 
 
 def update_student_repertoire():
+    """
+    Updates student's repertoire by either adding a new step (ie update status to Started)
+    or indicate when student becomes competent in a step (ie update status from Started to Competent)
+    """
     name = select_student()
     update_repertoire(name)
 
