@@ -14,6 +14,8 @@ if ! [[ -x "$(command -v pip3)" ]]
     exit 1
 fi
 
+echo 'Installing program, please wait...'
+
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt

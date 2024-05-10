@@ -1,5 +1,5 @@
 """
-This module defines functions for working with dance Syllabus
+This module defines functions for working with dance Syllabus data
 """
 
 import json
