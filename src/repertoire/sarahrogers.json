@@ -33,7 +33,7 @@
         "dance": "Waltz",
         "level": "2",
         "step": "Simple Twinkle",
-        "status": "Started"
+        "status": "Competent"
     },
     {
         "dance": "Waltz",
@@ -45,7 +45,7 @@
         "dance": "Waltz",
         "level": "2",
         "step": "Balance and Box",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Waltz",
@@ -57,13 +57,13 @@
         "dance": "Waltz",
         "level": "2",
         "step": "Turning Twinkles",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Waltz",
         "level": "2",
         "step": "Reverse Turn",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Waltz",
@@ -123,7 +123,7 @@
         "dance": "Rumba",
         "level": "1",
         "step": "Box Step",
-        "status": "Started"
+        "status": "Competent"
     },
     {
         "dance": "Rumba",
@@ -141,7 +141,7 @@
         "dance": "Rumba",
         "level": "1",
         "step": "5th Position Breaks",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Rumba",
@@ -447,7 +447,7 @@
         "dance": "Swing",
         "level": "3",
         "step": "Rocks",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Swing",
@@ -459,7 +459,7 @@
         "dance": "Foxtrot",
         "level": "1",
         "step": "Basic",
-        "status": "New"
+        "status": "Competent"
     },
     {
         "dance": "Foxtrot",
