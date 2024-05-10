@@ -1,6 +1,10 @@
 import json
 import string
 
+# bash scrip snippets
+pip install -r requirements.txt
+
+
 # From student.py
 
 # Version of function to select a single student which also included printing the student's details
