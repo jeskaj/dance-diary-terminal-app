@@ -8,7 +8,9 @@ from syllabus import print_step, dance_set
 
 
 def repertoire_filename(student_name):
-    """Function to format name of student into name of .json repertoire file for that student
+    """
+    Function to format name of student into name of .json
+    repertoire file for that student
 
     Parameters
     ----------
@@ -25,7 +27,7 @@ def repertoire_filename(student_name):
 
 def new_repertoire(filename: str):
     """
-    Create repertoire file for new student, based on current Syllabus
+    Create repertoire file for new student, based on current Syllabus.
     """
     # Load current syllabus data and store in local variable
     with open('syllabus.json') as f:

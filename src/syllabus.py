@@ -6,46 +6,103 @@ import json
 import string
 
 
-def print_step(step):
-    # Print details of a single dance step
+def print_step(step: dict):
+    """
+    Prints the dance, level and name of a step
+
+    Parameters
+    ----------
+    step : dict
+        Dictionary with keys dance, level and step (name of step)
+    """
     print(f"{step['dance']} - Level {step['level']}: {step['step']}")
 
 
-def view_syllabus(filename):
-    # View syllabus data stored in .json file
+def view_syllabus(filename: str):
+    """
+    Prints the entire syllabus, displaying each step on a new line, sorted by dance
+    then level. Filename not hard-coded to better allow for future development of
+    program to handle multiple syllabuses.
+
+    Parameters
+    ----------
+    filename : str
+        Filename of the .json file containing the syllabus to be printed
+    """
+    # Loads .json syllabus file and stores data in a list of dictionaries
     with open(filename) as f:
         syllabus = json.load(f)
-        syllabus_sorted = sorted(syllabus, key=lambda d: d['dance'])
+        # Sorts dictionary elements within list, by dance, then level
+        syllabus_sorted = sorted(syllabus, key=lambda s: (s['dance'], s['level']))
+    print('\n\n*** DANCE SYLLABUS ***\n')
+    # Print details of each step on a new line, for readability
     for step in syllabus_sorted:
         # Call function to print details of dance step
         print_step(step)
+    # Show total number of steps at end of syllabus
+    print (f'\n *** END OF SYLLABUS - Total steps: {len(syllabus)} ***')
 
 
-def dance_set(filename):
-    # Returns a set of unique dances within the syllabus
+def dance_set(filename: str):
+    """
+    Finds unique dance names within a syllabus .json file
+
+    Parameters
+    ----------
+    filename : str
+        Filename of .json file containing a syllabus (ie a 
+        list of dictionaries, each representing a dance step)
+
+    Returns
+    -------
+    set :
+        A set of unique dance names contained in the syllabus
+    """
+    # Load syllabus .json file and store data in local variable (list of dictionaries)
     with open(filename) as f:
         syllabus = json.load(f)
     # Create empty set
     dances = set()
+    # Add each dance name to the set
     for step in syllabus:
         # Add names of dances to set
         dances.add(step['dance'].lower())
+    # returns set of unique dance names, sorted alphabetically
     return sorted(dances)
 
 
-def print_dances(filename):
-    # Prints all unique names of dances within the syllabus
+def print_dances(filename: str):
+    """
+    Prints all unique names of dances within a syllabus .json file
+
+    Parameters
+    ----------
+    filename : str
+        Filename of .json file containing a syllabus (ie a 
+        list of dictionaries, each representing a dance step)
+    """
+    # Call function to create a set of unique dance names
     dances = dance_set(filename)
+    # Print each dance name
     for dance in dances:
         print(string.capwords(dance))
 
 
-def view_dance(filename):
-    # Find all steps for a single dance within the syllabus
+def view_dance(filename: str):
+    """
+    Displays all steps for a single dance within the syllabus
+
+    Parameters
+    ----------
+    filename : str
+        Filename of .json file containing a syllabus (ie a 
+        list of dictionaries, each representing a dance step)
+    """
+    # Load syllabus .json file and store data in local variable (list of dictionaries)
     with open(filename) as f:
         syllabus = json.load(f)
     print('\nYour syllabus contains the following dances:\n')
-    # Call function to list unique names of dances within syllabus
+    # Call function to display unique names of dances within syllabus
     print_dances(filename)
     # User to select one dance from printed list
     dance = input('\nPlease enter one of the above-listed dances, to view its syllabus of steps:  ')
@@ -73,9 +130,4 @@ def view_dance(filename):
 
 
 if __name__ == '__main__':
-    # print(view_syllabus('syllabus.json'))
-    # view_syllabus('syllabus.json')
-    # print(view_syllabus('syllabus.json'))
-    # print_dances('syllabus.json')
-    # view_dance('syllabus.json')
     pass
