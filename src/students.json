@@ -80,7 +80,25 @@
     {
         "name": "Tony Stark",
         "email": "ironman@starkindustries.com",
-        "mobile": "0483 928 028",
+        "mobile": "0483 927 838",
         "repertoire": "tonystark.json"
+    },
+    {
+        "name": "Clark Kent",
+        "email": "ckent@superman.com",
+        "mobile": "0283 272 929",
+        "repertoire": "clarkkent.json"
+    },
+    {
+        "name": "Bruce Wayne",
+        "email": "bwayne@batman.com",
+        "mobile": "0482 028 273",
+        "repertoire": "brucewayne.json"
+    },
+    {
+        "name": "Peter Parker",
+        "email": "peterp@avengers.com",
+        "mobile": "0283 287 383",
+        "repertoire": "peterparker.json"
     }
 ]

@@ -2,8 +2,13 @@
 This module defines functions for working with dance Syllabus data
 """
 
+from color50 import constants, css
 import json
 import string
+
+
+# Define colors using color50 module
+greensteps = css('lightgreen')
 
 
 def print_step(step: dict):
@@ -15,7 +20,7 @@ def print_step(step: dict):
     step : dict
         Dictionary with keys dance, level and step (name of step)
     """
-    print(f"{step['dance']} - Level {step['level']}: {step['step']}")
+    print(f"{greensteps}{step['dance']} - Level {step['level']}: {step['step']}{constants.RESET}")
 
 
 def view_syllabus(filename: str):
@@ -34,13 +39,13 @@ def view_syllabus(filename: str):
         syllabus = json.load(f)
         # Sorts dictionary elements within list, by dance, then level
         syllabus_sorted = sorted(syllabus, key=lambda s: (s['dance'], s['level']))
-    print('\n\n*** DANCE SYLLABUS ***\n')
+    print(f'\n\n{constants.GREEN_BG}*** DANCE SYLLABUS ***{constants.RESET}\n')
     # Print details of each step on a new line, for readability
     for step in syllabus_sorted:
         # Call function to print details of dance step
         print_step(step)
     # Show total number of steps at end of syllabus
-    print (f'\n *** END OF SYLLABUS - Total steps: {len(syllabus)} ***')
+    print (f'\n{constants.GREEN} *** END OF SYLLABUS - Total steps: {len(syllabus)} ***{constants.RESET}')
 
 
 def dance_set(filename: str):
@@ -85,7 +90,7 @@ def print_dances(filename: str):
     dances = dance_set(filename)
     # Print each dance name
     for dance in dances:
-        print(string.capwords(dance))
+        print(f'{greensteps}{string.capwords(dance)}{constants.RESET}')
 
 
 def view_dance(filename: str):
@@ -116,12 +121,12 @@ def view_dance(filename: str):
         dance_valid = True
     # While user input invalid, keep requesting input
     while dance_valid == False:
-        dance = input('Input invalid.  You must enter a dance from the list above:  ')
+        dance = input(f'{constants.RED}INVALID INPUT:{constants.RESET}  You must enter a dance from the list above:  ')
         # Check input validity
         if dance.lower() in dances:
             dance_valid = True
     # If input valid, print heading
-    print(f'\n\n{dance.upper()} SYLLABUS:\n')
+    print(f'\n\n{greensteps.bg()}{dance.upper()} SYLLABUS:{constants.RESET}\n')
     # Find steps in syllabus where dance == selected dance
     for step in syllabus:
         if step['dance'].lower() == dance.lower():

@@ -2,7 +2,7 @@
 Main module of application, containing menu structure and
 functionality, from which the program is run
 """
-
+from color50 import css, constants
 from student import (
     add_student,
     view_students,
@@ -12,37 +12,42 @@ from student import (
 from syllabus import view_syllabus, view_dance
 
 
+# Define colors using color50 module
+blueviolet = css('blueviolet')
+lightcoral = css('lightcoral')
+
+
 def print_main_menu():
     """
     Prints MAIN MENU options
     """
-    print("\nMAIN MENU:")
-    print("[1]  Syllabus")
-    print("[2]  Students")
-    print("[3]  Lessons (Coming soon!)")
-    print("[0]  Exit Program\n")
+    print(f"\n{blueviolet.bg()}MAIN MENU:{constants.RESET}")
+    print(f"{blueviolet}[1]  Syllabus")
+    print(f"[2]  Students")
+    print(f"[3]  Lessons (Coming soon!)")
+    print(f"[0]  Exit Program{constants.RESET}\n")
 
 
 def print_syllabus_menu():
     """
     Prints 2nd level SYLLABUS MENU options
     """
-    print("\nSYLLABUS MENU:")
-    print("[1]  View Entire Syllabus")
-    print("[2]  View Syllabus by Dance")
-    print("[0]  Return to Main Menu\n")
+    print(f"\n{constants.GREEN_BG}SYLLABUS MENU:{constants.RESET}")
+    print(f"{constants.GREEN}[1]  View Entire Syllabus")
+    print(f"[2]  View Syllabus by Dance")
+    print(f"[0]  Return to Main Menu\n{constants.RESET}")
 
 
 def print_student_menu():
     """
     Prints 2nd level STUDENT MENU options
     """
-    print("\nSTUDENT MENU:")
-    print("[1]  Add New Student")
-    print("[2]  View Student Contact Details & Repertoire")
-    print("[3]  Update Student Contact Details")
-    print("[4]  Update Student Repertoire")
-    print("[0]  Return to Main Menu\n")
+    print(f"\n{constants.BLUE_BG}STUDENT MENU:{constants.RESET}")
+    print(f"{constants.BLUE}[1]  Add New Student")
+    print(f"[2]  View Student Contact Details & Repertoire")
+    print(f"[3]  Update Student Contact Details")
+    print(f"[4]  Update Student Repertoire")
+    print(f"[0]  Return to Main Menu{constants.RESET}\n")
 
 
 # Lessons module not yet implemented
@@ -116,11 +121,11 @@ def lesson_menu():
     Intended to enable user to make a selection from LESSON MENU
     (functionality not yet developed)
     """
-    print("\n*** You selected [3] LESSONS ***")
+    print(f"\n{lightcoral.bg()}*** You selected [3] LESSONS ***{constants.RESET}")
     print(
-        "This module will enable you to schedule lessons and create lesson plans for your students."
+        f"{lightcoral}This module will enable you to schedule lessons and create lesson plans for your students."
     )
-    print("It will be released in a future update. Please make another selection.")
+    print(f"It will be released in a future update. Please make another selection.{constants.RESET}")
 
 
 def main_menu():
@@ -156,7 +161,7 @@ def main_menu():
     quit()
 
 # Start of program - print welcome message
-print("\nWelcome to Dance Diary!")
+print(f'\n{blueviolet}Welcome to Dance Diary!{constants.RESET}')
 
 # Call function to display main menu
 main_menu()

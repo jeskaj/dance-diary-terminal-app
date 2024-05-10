@@ -146,6 +146,11 @@ You must include:
 
 Mention all imported packages and modules
 
+color50
+https://pypi.org/project/color50/
+https://color50.readthedocs.io/
+
+
 ### Installation Instructions
 
 ### Application Manual

@@ -3,6 +3,7 @@ This module defines the class Student and functions related to
 creating, viewing and editing student data.
 """
 
+from color50 import css, constants
 import json
 from repertoire import (
     repertoire_filename,
@@ -10,6 +11,10 @@ from repertoire import (
     view_repertoire,
     update_repertoire,
 )
+
+
+# Define colors using color50 module
+teal = css('teal')
 
 
 class Student:
@@ -43,7 +48,7 @@ def add_student():
     Function to allow user to input new student details
     """
     # Get student details via user input
-    print("\n*** CREATE NEW STUDENT ***")
+    print(f"\n{teal.bg()}*** CREATE NEW STUDENT ***{constants.RESET}")
     name = input("Enter student's full name (or 0 to cancel): ")
 
     # Unless user entered 0 to return to previous menu, check input is valid
@@ -58,7 +63,7 @@ def add_student():
         if name.lower() in student_names:
             # Advise user if student with name input already exists and return to menu
             print(
-                f"\n*** ERROR:  Student with name {name} already exists.  Cannot add student. ***"
+                f"\n{constants.RED}*** ERROR:  Student with name {name} already exists.  Cannot add student. ***{constants.RESET}"
             )
         # If a student with name input does not already exist, continue
         else:
@@ -67,9 +72,9 @@ def add_student():
             mobile = input("Enter student's mobile phone number: ")
             # Give user opportunity to confirm data entered is correct before creating student
             print(
-                "\n*** Please check that the following details are correct - student name cannot be changed once created ***\n"
+                f"\n{constants.RED}*** Please check that the following details are correct - student name cannot be changed once created ***{constants.RESET}\n"
             )
-            print(f"Name: {name}\nEmail: {email}\nMobile: {mobile}")
+            print(f"{teal}Name: {name}\nEmail: {email}\nMobile: {mobile}{constants.RESET}")
             # Get user input to confirm user creation
             proceed = input(
                 "\nEnter y to create this student, or any other key to cancel:  "
@@ -98,11 +103,11 @@ def add_student():
                 new_repertoire(new_student_dict["repertoire"])
 
                 # Print confirmation message displaying new student details and total number of students now stored
-                print("\nYou have added a new student with the following details:\n")
+                print(f"\n{teal}You have added a new student with the following details:{constants.RESET}\n")
                 print(
                     f"Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}"
                 )
-                print(f"\nYour total number of students is now: {len(students)}")
+                print(f"\n{teal}Your total number of students is now: {len(students)}{constants.RESET}")
 
 
 def select_student():
@@ -132,10 +137,10 @@ def select_student():
     while student_found == False:
         # Warn user name entered is not valid & display list of valid names
         print(
-            f"\n*** ERROR:  There is no student named {name}.  Please enter a name from the following list:  ***\n"
+            f"\n{constants.RED}*** ERROR:  There is no student named {name}.  Please enter a name from the following list:  ***{constants.RESET}\n"
         )
         for student in students_sorted:
-            print(student["name"])
+            print(f'{teal}{student["name"]}{constants.RESET}')
         # Get student name from user
         name = input("\nEnter the name of a student from the above list:  ")
         # Check validity of new name entered
@@ -156,9 +161,9 @@ def print_student_details(student: dict):
         A dictionary contain student information, including the
         keys 'name', 'email' and 'mobile'
     """
-    print(f"\nSTUDENT: {student['name']}")
+    print(f"\n{teal}STUDENT: {student['name']}")
     print(f"Email: {student['email']}")
-    print(f"Mobile: {student['mobile']}")
+    print(f"Mobile: {student['mobile']}{constants.RESET}")
 
 
 def view_student_deatils():
@@ -193,24 +198,24 @@ def view_students():
     students_sorted = sorted(students, key=lambda d: d["name"])
 
     # Display VIEW STUDENT DETAILS menu to user
-    print("\nVIEW STUDENT DETAILS:")
-    print("[a]  View contact details for all students")
-    print("[s]  Select a single student to view contact details & repertoire progress")
+    print(f"\n{teal.bg()}View Student Details:{constants.reset}")
+    print(f"{teal}[a]  View contact details for all students")
+    print(f"[s]  Select a single student to view contact details & repertoire progress{constants.RESET}")
 
     # Get menu selection input from user
     selection = input("\nEnter a or s to view student details:  ")
 
     # Validate user input
     while selection not in ("a", "s"):
-        selection = input("\nInvalid input. Enter a or s (refer above menu):  ")
+        selection = input(f"\n{constants.RED}INVALID INPUT:{constants.RESET} Enter a or s (refer above menu):  ")
 
     # If a entered, display contact details of all students
     if selection == "a":
-        print("\nSTUDENT CONTACT DETAILS:")
+        print(f"\n{teal.bg()}STUDENT CONTACT DETAILS:{constants.RESET}")
         for student in students_sorted:
             print_student_details(student)
         # Print total number of students, based on length of list
-        print(f"\nTOTAL STUDENTS: {len(students)}")
+        print(f"\n{teal.bg()}TOTAL STUDENTS: {len(students)}{constants.RESET}")
 
     # If s entered, run function to find & display contact details & repertoire of single student
     elif selection == "s":
@@ -227,16 +232,16 @@ def update_student():
     # Load student data into local variable (list of dictionaries)
     with open("students.json") as f:
         students = json.load(f)
-    print("\nCURRENT STUDENT DETAILS:")
+    print(f"\n{teal.bg()}CURRENT STUDENT DETAILS:{constants.RESET}")
     # Find matching student and print its data, so user can review current contact details
     for student in students:
         if student["name"].lower() == name.lower():
             print_student_details(student)
     # Print UPDATE STUDENT DETAILS menu
-    print("\nUPDATE STUDENT DETAILS")
-    print("[e]  Update email")
+    print(f"\n{teal.bg()}Update Student Details{constants.RESET}")
+    print(f"{teal}[e]  Update email")
     print("[m]  Update mobile")
-    print("[0]  Return to Student Menu")
+    print(f"[0]  Return to Student Menu{constants.RESET}")
     # Get menu selection from user
     selection = input("\nEnter e or m to update student details:  ")
 
@@ -244,7 +249,7 @@ def update_student():
     while selection != "0":
         # Instruct user to try again, until they enter a valid selection
         while selection not in ("e", "m"):
-            selection = input("Invalid input. Enter e or m (see Menu options above):  ")
+            selection = input(f"{constants.RED}INVALID INPUT:{constants.RESET} Enter e or m (see Menu options above):  ")
             # Exit loop if 0 is entered
             if selection == "0":
                 break
@@ -262,12 +267,12 @@ def update_student():
                     if selection == "e":
                         new_email = input("Enter new email:  ")
                         student["email"] = new_email
-                        confirmation_msg = f"{student['name']}'s email has been updated to: {student['email']}"
+                        confirmation_msg = f"{teal}{student['name']}'s email has been updated to:{constants.RESET} {student['email']}"
                     # If m entered, update value of mobile and set relevant confirmation msg
                     elif selection == "m":
                         new_mobile = input("Enter new mobile:  ")
                         student["mobile"] = new_mobile
-                        confirmation_msg = f"{student['name']}'s mobile has been updated to: {student['mobile']}"
+                        confirmation_msg = f"{teal}{student['name']}'s mobile has been updated to:{constants.RESET} {student['mobile']}"
 
             # Output updated data back to students .json
             with open("students.json", "w") as f:
