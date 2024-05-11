@@ -103,8 +103,14 @@
     },
     {
         "name": "Lois Lane",
-        "email": "llane@thedailyplanet.com",
-        "mobile": "0482 928 279",
+        "email": "llane@supermanfan.com",
+        "mobile": "0482 927 829",
         "repertoire": "loislane.json"
+    },
+    {
+        "name": "Tabitha Test",
+        "email": "ttest@gmail.com",
+        "mobile": "0439 292 282",
+        "repertoire": "tabithatest.json"
     }
 ]

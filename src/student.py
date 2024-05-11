@@ -248,7 +248,7 @@ def update_student():
     print("[m]  Update mobile")
     print(f"[0]  Return to Student Menu{constants.RESET}")
     # Get menu selection from user
-    selection = input("\nEnter e or m to update student details:  ")
+    selection = input("\nEnter e or m to update student details (or 0 to cancel):  ")
 
     # Unless user entered 0 to return to previous menu, check input is valid
     while selection != "0":
