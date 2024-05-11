@@ -1,7 +1,9 @@
 # T1A3 Terminal Application:  Dance Diary
 
 ## Overview & Purpose
-**Dance Diary** is a terminal application to assist dance teachers by storing their students' contact information, creating lesson plans and keep track of students’ progress through the syllabus.
+**Dance Diary** is a terminal application to designed assist dance teachers, by storing their students' contact information, keeping track of students’ progress through the repertoire.
+
+The initial project proposal also included a feature to develop lesson plans, which has not been completed for the initial release.
 
 ## Source Code Repository
 
@@ -11,29 +13,44 @@ The source code for this project is available on Github in the following reposit
 
 ## Style Guide
 
-**ASSIGNMENT REQUIREMENTS**
-- Identify any code style guide or styling conventions that the application will adhere to.
-- Reference the chosen style guide appropriately.
+The following style guide was used for this project:
 
-**CHECK & UPDATE THIS - TAKEN DIRECTLY FROM EXAMPLE PROJECT:**
-- 4 spaces per indentation level
-- Maximum line length is 79 characters
-- Imports on separate lines
-- Using single-quoted strings consistently, except when an apostrophe appears in the string, in which case double-quotes were used to avoid backslashes, and hence improve readability
-- Comments in complete sentences and the first word is capitalised. Also inline comments were avoided
-- Function names are in lower case and words are separated by underscores to improve readability.
+- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
 
-**MY TEXT**
+## Installation Instructions
 
+The Dance Diary application should be run by executing the script `dance_diary.sh`, from within in the `src` folder of this project.
 
-PEP8
-- Blank lines:
-  - Surround top-level function and class definitions with two blank lines.
-  - Method definitions inside a class are surrounded by a single blank line.
-  - Extra blank lines may be used (sparingly) to separate groups of related functions. Blank lines may be omitted between a bunch of related one-liners (e.g. a set of dummy implementations).
-  - Use blank lines in functions, sparingly, to indicate logical sections.
+From `/src`, run the following command:
 
-numpy
+`./dance_diary.sh`
+
+This script will check that:
+- Python3 is installed; and
+- pip3 is installed
+
+Assuming this is the case, it will then:
+- install the required dependencies (as detailed below)
+- run `main.py` to start the application
+
+The user will then be presented with the application's Main Menu and can commence using the application.
+
+*NOTE:  The script's permissions have been set to executable for all users, but in case of permission errors, run the command:*  `chmod +x dance_diary.sh`
+
+### System Requirements
+
+This application requires:
+- Python3
+- pip3
+
+### Dependendcies
+
+- art==6.2 (refer [art 6.2](https://pypi.org/project/art/))
+- color50==1.0.1 (refer [color50 1.0.1](https://pypi.org/project/color50/))
+
+### Program Manual
+
+INSERT SCREENSHOTS & INSTRUCTIONS
 
 ## Features
 
@@ -110,60 +127,42 @@ STUDENT MENU:
 
 ## Implementation Plan
 
-Develop an implementation plan which:
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
-
-Utilise a suitable project management platform to track this implementation plan.
-
-Provide screenshots/images and/or a reference to an accessible project management platform used to track this implementation plan. 
-
-> Your checklists for each feature should have at least 5 items.
-
--------------------------
 The implementation plan for this project was created using [Trello](https://trello.com/) and can be access via the following link:
 
-INSERT LINK TO BOARD - check access
+[Terminal App - Dance Diary](https://trello.com/b/bFwCFIW8/terminal-app-dance-diary)
 
-https://trello.com/b/bFwCFIW8/terminal-app-dancing-diary
+The Trello workspace has been set to Public, but screenshots are also provided.
 
-Initial stages:
+![Trell board is set to Public](docs/trello-board-public.png)
 
-![initial planning - Sunday](docs/trello1-sun.png)
+5 May, 2024:
 
-## Installation & Manual
+![Trello on Sunday](docs/trello1-sun.png)
 
-Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
+7 May, 2024:
 
-You must include:
-- steps to install the application
-- any dependencies required by the application to operate
-- any system/hardware requirements
-- how to use any command line arguments made for the application
+![Trello on Tuesday](docs/trello3-tues.png)
 
-### Dependendcies
+8 May 2024 - At this stage, determined that the Lesson module could not be developed for the initial project submission, so moved to Backlog:
 
-Mention all imported packages and modules
+![Trello on Wednesday](docs/trello7-wed.png)
 
-color50
-https://pypi.org/project/color50/
-https://color50.readthedocs.io/
+9 May, 2024:
 
+![Trello on Thursday](docs/trello11-thurs.png)
 
-art 6.2
-https://pypi.org/project/art/
+10 May, 2024:
 
-### Installation Instructions
+![Trello on Friday](docs/trello15-fri.png)
 
-### Application Manual
+11 May, 2024:
 
-INCLUDE LINK TO MANUAL CREATED BY PYDOCS
+![Trello on Saturday](docs/trello17-sat.png)
 
 ## References
 
-Provide full attribution to referenced sources (where applicable).
+Van Rossum, Warsaw & Coghlan 2001, *PEP 8 – Style Guide for Python Code*, 7 May 2024, https://peps.python.org/pep-0008/
 
-PEP8
+Fletcher, D 2024, *This is color50*, 10 May, 2024, https://color50.readthedocs.io/
 
-numpy
+Art Development Team 2017, *ASCII Art Library for Python*, 10 May, 2024, https://pypi.org/project/art/
