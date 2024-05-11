@@ -151,6 +151,9 @@ https://pypi.org/project/color50/
 https://color50.readthedocs.io/
 
 
+art 6.2
+https://pypi.org/project/art/
+
 ### Installation Instructions
 
 ### Application Manual

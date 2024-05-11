@@ -2,6 +2,8 @@
 Main module of application, containing menu structure and
 functionality, from which the program is run
 """
+
+from art import tprint
 from color50 import css, constants
 from student import (
     add_student,
@@ -155,13 +157,20 @@ def main_menu():
         print_main_menu()
         selection_1 = input("Please enter 1, 2, 3 or 0: ")
 
+    # Print farewell message
+    print(f'\n{blueviolet}=========================================================================')
     print(
-        "\nYou have closed your Dance Diary.  We hope you'll make another entry soon.  Goodbye!\n"
+        "\nYou have closed your Dance Diary. We hope you'll make another entry soon!"
     )
+    tprint(f'\n                GOODBYE\n', font='sheqi')
+    print(f'========================================================================={constants.RESET}')
     quit()
 
 # Start of program - print welcome message
-print(f'\n{blueviolet}Welcome to Dance Diary!{constants.RESET}')
+print(f'\n{blueviolet}=========================================================================')
+tprint(f'\n         WELCOME    TO', font='sheqi')
+tprint(f'   Dance Diary!')
+print(f'========================================================================={constants.RESET}')
 
 # Call function to display main menu
 main_menu()
