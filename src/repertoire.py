@@ -11,6 +11,7 @@ from syllabus import print_step, dance_set
 # Define colors using color50 module
 greensteps = css('lightgreen')
 teal = css('teal')
+forestgreen = css('forestgreen')
 
 
 def repertoire_filename(student_name):
@@ -138,7 +139,7 @@ def view_repertoire(student_name: str):
     # Create list of completed steps ie call function to filter for steps with status Competent
     completed_steps = steps_with_status(repertoire, "Competent")
 
-    print(f"\nREPERTOIRE STATUS FOR {student_name.upper()}")
+    print(f"\n{teal.bg()}REPERTOIRE STATUS FOR {student_name.upper()}{constants.RESET}")
 
     # If length of both of these lists is 0, then student is new and hasn't started learning any steps
     if len(current_steps) == 0 and len(completed_steps) == 0:
@@ -152,7 +153,7 @@ def view_repertoire(student_name: str):
     if len(current_steps) != 0:
         # Sort current steps by dance name
         current_steps_sorted = sorted(current_steps, key=lambda d: d["dance"])
-        print("\nSTEPS IN PROGRESS (student is currently learning these steps):")
+        print(f"\n{forestgreen.bg()}STEPS IN PROGRESS (student is currently learning these steps):{constants.RESET}")
         # Display current steps
         for step in current_steps_sorted:
             print_step(step)
@@ -161,7 +162,7 @@ def view_repertoire(student_name: str):
     if len(completed_steps) != 0:
         # Sort completed steps by dance name
         completed_steps_sorted = sorted(completed_steps, key=lambda d: d["dance"])
-        print("\nSTEPS COMPLETED (student is competent in these steps):")
+        print(F"\n{forestgreen.bg()}STEPS COMPLETED (student is competent in these steps):{constants.RESET}")
         # Display steps student has completed
         for step in completed_steps_sorted:
             print_step(step)
@@ -216,7 +217,7 @@ def validate_step_choice(new_steps: list):
         The name of a valid step with status New
     """
     # Get name of step to add from user
-    step_choice = input("\nEnter the name of a step from the above list to be added:  ")
+    step_choice = input("\nEnter the name of a step from the above list:  ")
     # Validate user input
     # Create list of step names
     step_names = [step["step"].lower() for step in new_steps]

@@ -48,7 +48,7 @@ def add_student():
     Function to allow user to input new student details
     """
     # Get student details via user input
-    print(f"\n{teal.bg()}*** CREATE NEW STUDENT ***{constants.RESET}")
+    print(f"\n{teal.bg()}*** Create New Student ***{constants.RESET}")
     name = input("Enter student's full name (or 0 to cancel): ")
 
     # Unless user entered 0 to return to previous menu, check input is valid
@@ -108,6 +108,9 @@ def add_student():
                     f"Name: {new_student.name}\nEmail: {new_student.email}\nMobile: {new_student.mobile}"
                 )
                 print(f"\n{teal}Your total number of students is now: {len(students)}{constants.RESET}")
+            
+            else:
+                print(f"\n{constants.MAGENTA}*** CREATE STUDENT CANCELLED:  New student NOT added ***{constants.RESET}")
 
 
 def select_student():
@@ -198,7 +201,7 @@ def view_students():
     students_sorted = sorted(students, key=lambda d: d["name"])
 
     # Display VIEW STUDENT DETAILS menu to user
-    print(f"\n{teal.bg()}View Student Details:{constants.reset}")
+    print(f"\n{teal.bg()}View Student Details:{constants.RESET}")
     print(f"{teal}[a]  View contact details for all students")
     print(f"[s]  Select a single student to view contact details & repertoire progress{constants.RESET}")
 
@@ -219,6 +222,7 @@ def view_students():
 
     # If s entered, run function to find & display contact details & repertoire of single student
     elif selection == "s":
+        print(f'\n{teal.bg()}*** Select student to view ***{constants.RESET}')
         # Call function to find & display details of chosen student
         view_student_deatils()
 
@@ -227,6 +231,7 @@ def update_student():
     """
     Function to update student contact details
     """
+    print(f'\n{teal.bg()}*** Select student to update ***{constants.RESET}')
     # Call function to get a valid student name from user
     name = select_student()
     # Load student data into local variable (list of dictionaries)
@@ -287,6 +292,7 @@ def update_student_repertoire():
     Updates student's repertoire by either adding a new step (ie update status to Started)
     or indicating when student becomes competent in a step (ie update status from Started to Competent)
     """
+    print(f'\n{teal.bg()}*** Select student for updating repertoire ***{constants.RESET}')
     # Call function to get a valid student name from the user
     name = select_student()
     # Call function to update repertoire for selected student

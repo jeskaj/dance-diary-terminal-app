@@ -80,7 +80,7 @@ def syllabus_menu():
             view_dance("syllabus.json")
         else:
             # If selection is invalid, ask for new input
-            print("Invalid selection.  Please try again.")
+            print(f"\n{constants.RED}INVALID INPUT:  Please try again.{constants.RESET}")
 
         # When user returns from above-chosen function, print syllabus menu and ask for input
         print_syllabus_menu()
@@ -109,7 +109,7 @@ def student_menu():
             update_student_repertoire()
         else:
             # If selection is invalid, ask for new input
-            print("Invalid selection.  Please try again.")
+            print(f"\n{constants.RED}INVALID INPUT:  Please try again.{constants.RESET}")
 
         # When user returns from above-chosen function, print student menu and ask for input
         print_student_menu()
@@ -149,7 +149,7 @@ def main_menu():
             lesson_menu()
         else:
             # If selection is invalid, ask for new input
-            print("\nInvalid selection.  Please try again.")
+            print(f"\n{constants.RED}INVALID INPUT:  Please try again.{constants.RESET}")
 
         # When user returns from above-chosen function, print main menu and ask for input
         print_main_menu()

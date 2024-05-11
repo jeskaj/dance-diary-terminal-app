@@ -13,7 +13,7 @@
     },
     {
         "name": "Rebecca Smith",
-        "email": "rsmith@email.com.au",
+        "email": "beccy@outlook.com",
         "mobile": "0431 123 456",
         "repertoire": "RebeccaSmith.json"
     },
@@ -62,7 +62,7 @@
     {
         "name": "Leonie Baker",
         "email": "lbaker@yahoo.com.au",
-        "mobile": "0483 028 282",
+        "mobile": "0247 298 272",
         "repertoire": "leoniebaker.json"
     },
     {
@@ -79,7 +79,7 @@
     },
     {
         "name": "Tony Stark",
-        "email": "ironman@starkindustries.com",
+        "email": "anthonyironman@outlook.com",
         "mobile": "0483 927 838",
         "repertoire": "tonystark.json"
     },
@@ -100,5 +100,11 @@
         "email": "peterp@avengers.com",
         "mobile": "0283 287 383",
         "repertoire": "peterparker.json"
+    },
+    {
+        "name": "Lois Lane",
+        "email": "llane@thedailyplanet.com",
+        "mobile": "0482 928 279",
+        "repertoire": "loislane.json"
     }
 ]
