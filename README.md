@@ -50,7 +50,31 @@ The user will then be presented with the application's Main Menu.
 
 ## Program Features & Manual
 
-### Main Menu
+### User Stories
+
+This application is designed solely for the use of dance teachers, so the user stories used to develop the program's features were all taken from the perspective of a dance teacher.
+
+The program features were developed from the following user stories:
+
+As a dance teacher, I want to be able to:
+1. View the syllabus of dances and dance steps I will be teaching students
+2. Store my students’ names and contact details
+3. View my students’ contact details
+4. Update my students’ contact details
+5. Keep track of my students’ progress in learning the syllabus for each dance
+6. Create a lesson plan detailing the dances and steps I intend to teach a student at their next lesson
+
+Acceptance criteria for these users stories were that the user must be able to:
+1. View the whole dance syllabus in a readable format, or select just one dance to view
+2. Add students to the app and store their name, email & mobile
+3. View student contact details, for one or all students
+4. Update students' email addresses and mobile numbers
+5. Store, view & update students' progress through the syllabus, ensuring that students do not commence level 2 or 3 steps, before having completed all steps from the previous level/s.
+6. Create, view & update lesson plans for students [FEATURE NOT DEVELOPED]
+
+### Program Feature Manual
+
+#### Main Menu
 
 On running the program, the Main Menu is presented:
 
@@ -59,6 +83,10 @@ On running the program, the Main Menu is presented:
 If any input is provided other than 1, 2, 3 or 0, the user is advised to try again and the Main Menu is presented again:
 
 ![Main Menu - Invalid Input](docs/main-menu-invalid-input.png)
+
+If `0` is selected to `Exit Program`, a farewell message is displayed before the program quits:
+
+![Exit Message](docs/exit-msg.png)
 
 ### [1] Syllabus
 
@@ -106,7 +134,9 @@ If any input is provided other than 1, 2, 3, 4 or 0, the user is advised to try 
 
 #### [1] Add New Student
 
-This feature request's the user enter the new student's full name.  If the name already exists, a warning is presented, to avoid duplication.  Validation is not case sensitive:
+Select this feature to add a new student.
+
+This feature requests the user enter the new student's full name.  If the name already exists, a warning is presented, to avoid duplication.  Validation is not case sensitive:
 
 ![Student Add - Start](docs/student-create-start.png)
 
@@ -146,6 +176,8 @@ Once a student is selected who has started and/or completed learning at least on
 
 #### [3] Update Student Contact Details
 
+Use this feature to update student contact details.
+
 When this feature is selected, the user is requested to enter the name of a student, or any key to see a list of current student names (as described in the previous feature).
 
 Once a valid name has been entered, the user is presented with the student's current contact details and given the 
@@ -166,33 +198,53 @@ This data is updated accordingly in the `students.json` file.
 
 #### [4]  Update Student Repertoire Progress
 
-1. User selects student
-3. User selects from options to:
-  a) Add a new step
-    1. User is presented with a list of dances to choose from
-    2. User selects dance
-    3. User is presented a list of steps from the selected dance that may be added, which:
-      - if all steps for the dance are completed:
-        - advise user student has completed all steps for this dance
-        - end
-      - excludes steps already started or completed
-      - unless all level 1 steps are completed, excludes level 2 & 3 steps
-      - unless all level 2 steps are completed, excludes level 3 steps
-    4. User selects a step to be added
-    5. Step is added to student's repertoire with status Started
+Use this feature to update a student's progress in the syllabus ie to add a new step for them to start learning, or to indicate when they have completed a step they are learning.
 
-  u) Update an existing step
-    1. User is presented with a list of dances to choose from
-    2. User selects dance
-    3. User is presented a list of steps from the selected dance that may be added, which:
-      - if all steps for the dance are completed:
-        - advise user student has completed all steps for this dance
-        - end
-      - excludes steps already started or completed
-      - unless all level 1 steps are completed, excludes level 2 & 3 steps
-      - unless all level 2 steps are completed, excludes level 3 steps
-    4. User selects a step to be added
-    5. Step is added to student's repertoire with status Started
+When this feature is selected, the user is requested to enter the name of a student, or any key to see a list of current student names.  Entering anything other than a valid student name results in an `INVALID INPUT` warning and the list of valid student names is presented (as described in previous features).
+
+Once a valid student name has been entered, the user is presented with a choice between adding a new step or updating an existing step as completed (ie status = Competent):
+
+![Student Repertoire Update](docs/repertoire-update.png)
+
+`[a]  Add new step`
+
+If `a` is selected, the program checks if the student has any new steps left to add and if they do not, displays a message advising the student has already started or completed all steps in the syllabus:
+
+![Student No More New Steps in Syllabus](docs/repertoire-add-none.png)
+
+If there are still steps in the syllabus that the student has not started learning, a list of dances is presented to select from.  Invalid input results in a warning (as previously described).  Once a valid dance has been entered, the program checks if the student still has new steps to start in that dance and display a message if not:
+
+![Student No More New Steps in dance](docs/repertoire-add-none-dance.png)
+
+Otherwise, a list of steps able to be added is displayed, noting that:
+
+- If all Level 1 steps are not yet completed (Competent), only Level 1 steps will be displayed
+- If all Level 1 steps are completed, Level 2 steps that are not yet completed will be displayed
+- If all Level 1 & 2 steps are completed, Level 3 steps that are not yet completed will be displayed
+
+*Example: Student has not completed Level 1 in Waltz:*
+![Repertoire Add Step Start](docs/repertoire-add-start.png)
+
+*Example:  Student has completed Levels 1 & 2 in Swing:*
+![Repertoire Add Step Start](docs/repertoire-lvl1and2-completed.png)
+
+Once a valid step is chosen, the status of the step in the student's repertoire .json file is updated to Started and a confirmation message is displayed:
+
+![Repertoire Add Step End](docs/repertoire-add-end.png)
+
+`[u]  Update step in progress to Competent`
+
+The flow of this feature is similar to that of `Add new step`, except that it will check if the student has any steps with a status of Started.  If not, the following message is displayed:
+
+![Student Started Steps None](docs/repertoire-update-none.png)
+
+After a dance is chosen, only steps with status of Started will be displayed for selection:
+
+![Student Repertoire Update Start](docs/repertoire-update-start.png)
+
+Once a valid step is selected for completion, the status of the step is updated to Competent in the student's reperoire .json file and a confirmation message is displayed:
+
+![Student Repertoire Update End](docs/repertoire-update-end.png)
 
 ### [3] Lessons
 

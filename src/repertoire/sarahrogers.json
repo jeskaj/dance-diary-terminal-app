@@ -45,7 +45,7 @@
         "dance": "Waltz",
         "level": "2",
         "step": "Balance and Box",
-        "status": "Started"
+        "status": "Competent"
     },
     {
         "dance": "Waltz",
@@ -441,7 +441,7 @@
         "dance": "Swing",
         "level": "3",
         "step": "Swivels to Locks",
-        "status": "New"
+        "status": "Started"
     },
     {
         "dance": "Swing",
