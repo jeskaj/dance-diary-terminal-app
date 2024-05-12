@@ -1,7 +1,7 @@
 # T1A3 Terminal Application:  Dance Diary
 
 ## Overview & Purpose
-**Dance Diary** is a terminal application to designed assist dance teachers, by storing their students' contact information and keeping track of students’ progress through the repertoire.
+**Dance Diary** is a terminal application to designed assist dance teachers, by storing their students' contact information and keeping track of students’ progress through the syllabus of dance styles and steps being taught.
 
 *NOTE: The initial project proposal also included a feature to develop lesson plans, which has not been completed for the initial release.*
 
@@ -32,7 +32,7 @@ This application requires:
 
 The Dance Diary application should be run by executing the script `dance_diary.sh`, from within in the `src` folder of this project.
 
-From `/src`, run the following command:
+From `src/`, run the following command:
 
 `./dance_diary.sh`
 
@@ -52,7 +52,7 @@ The user will then be presented with the application's Main Menu.
 
 ### User Stories
 
-This application is designed solely for the use of dance teachers, so the user stories used to develop the program's features were all taken from the perspective of a dance teacher.
+This application is designed solely for the use of dance teachers, so the user stories documented to develop the program's features were all written from the perspective of a dance teacher.
 
 The program features were developed from the following user stories:
 
@@ -70,13 +70,13 @@ Acceptance criteria for these users stories were that the user must be able to:
 3. View student contact details, for one or all students
 4. Update students' email addresses and mobile numbers
 5. Store, view & update students' progress through the syllabus, ensuring that students do not commence level 2 or 3 steps, before having completed all steps from the previous level/s.
-6. Create, view & update lesson plans for students [FEATURE NOT DEVELOPED]
+6. Create, view & update lesson plans for students [FEATURE NOT DEVELOPED YET]
 
 ### Program Feature Manual
 
 #### Main Menu
 
-On running the program, the Main Menu is presented:
+On running the program, after displaying a welcome message, the Main Menu is presented:
 
 ![Main Menu](docs/main-menu.png)
 
@@ -96,7 +96,7 @@ When `Syllabus` is selected from the Main Menu, the Syllabus Menu is presented:
 
 ![Syllabus Menu](docs/syllabus-menu.png)
 
-If any input is provided other than 1, 2 or 0, the user is advised to try again (as shows above for Main Menu) and the Syllabus Menu is immediately presented again.
+If any input is provided other than 1, 2 or 0, the user is advised to try again (as shown above for Main Menu) and the Syllabus Menu is immediately presented again.
 
 *NOTE:  The initial release of Dance Diary contains a single syllabus.json file, which comprises the Bronze Syllabus of five common styles taught in American Style ballroom dancing - Cha Cha, Foxtrot, Rumba, Swing and Waltz.  The syllabus for each dance is further divided into three levels (1, 2 and 3).*
 
@@ -104,7 +104,7 @@ If any input is provided other than 1, 2 or 0, the user is advised to try again 
 
 #### [1] View Entire Syllabus
 
-If this feature is chosen, the all steps in the syllabus.json file is displayed in readable format for the user to view, sorted by dance, then level:
+If this feature is chosen, the details of every step in the syllabus.json file (ie dance, level and name) are displayed in readable format for the user to view, sorted by dance, then level:
 
 ![Syllabus View Start](docs/syllabus-start.png)
 
@@ -128,7 +128,7 @@ When `Students` is selected from the Main Menu, the Student Menu is presented:
 
 ![Student Menu](docs/student-menu.png)
 
-If any input is provided other than 1, 2, 3, 4 or 0, the user is advised to try again (as shows above for Main Menu) and the Student Menu is immediately presented again.
+If any input is provided other than 1, 2, 3, 4 or 0, the user is advised to try again (as shown above for Main Menu) and the Student Menu is immediately presented again.
 
 *NOTE: For the purposes of T1A3 assignment submission, the application contains some dummy student data to allow for easy testing.  All names and contact details are ficticious.*
 
@@ -144,11 +144,11 @@ If a unique name is entered, the user is then prompted to provide the student's 
 
 ![Student Add - End](docs/student-create-end.png)
 
-When a new student is created, as well as adding their data to the `students.json` file, a repertoire file is also created for the student in the `repertoire` folder.  This file is created by taking a copy of all of the steps in the syllabus.json file and adding a `status` of `New` to each step, to indicate that the student has not yet started learning the step.  The repertoire file is named in the format `studentname.json` eg Peter Parker's repertoire file is named `peterparker.json`.
+When a new student is created, as well as adding their data to the `students.json` file, a repertoire file is also created for the student in the `repertoire/` directory.  This file is created by taking a copy of all of the steps in the syllabus.json file and adding a `status` of `New` to each step, to indicate that the student has not yet started learning the step.  The repertoire file is named in the format `studentname.json` eg Peter Parker's repertoire file is named `peterparker.json`.
 
 #### [2] View Student Contact Details & Repertoire
 
-This feature presents a choice between viewing a list of contact details for all students, or selecting a single student, to view both their contact details and repertoire progress.  Invalid input results in a warning and the user is remindered to select from the menu:
+This feature presents a choice between viewing a list of contact details for all students, or selecting a single student, to view all of the student's information (ie both their contact details and repertoire progress).  Invalid input results in a warning and the user is reminded to select from the menu:
 
 ![Student View - Start](docs/student-view-start.png)
 
@@ -166,7 +166,7 @@ If `s` is selected, the user is invited to enter a student name, or press any ke
 
 ![Student View Single - Start](docs/student-view-single-start.png)
 
-If the student is new and has not started learning any steps, the below message is displayed:
+If the student is new and has not started learning any steps, their contact details are displayed, along with the a message advising they have not started learning any steps yet:
 
 ![Student View New](docs/student-view-new.png)
 
@@ -176,13 +176,11 @@ Once a student is selected who has started and/or completed learning at least on
 
 #### [3] Update Student Contact Details
 
-Use this feature to update student contact details.
+Use this feature to update a student's email address or mobile number.
 
 When this feature is selected, the user is requested to enter the name of a student, or any key to see a list of current student names (as described in the previous feature).
 
-Once a valid name has been entered, the user is presented with the student's current contact details and given the 
-
-must choose to update the student's email or mobile.  The user will receive an `INVALID INPUT` warning if anything other than `e` or `m` is entered:
+Once a valid name has been entered, the user is presented with the student's current contact details for review.  They can then choose to update the student's email or mobile (or cancel the update).  The user will receive an `INVALID INPUT` warning if anything other than `e`, `m` or `0` is entered:
 
 ![Student Update Details](docs/student-update-details.png)
 
@@ -194,7 +192,7 @@ If `m` is entered, the user is prompted to enter the new mobile number and a con
 
 ![Student Update Mobile](docs/student-mobile-update.png)
 
-This data is updated accordingly in the `students.json` file.
+In both the email and mobile update features, the data is updated accordingly in the `students.json` file, before the confirmation message is displayed.
 
 #### [4]  Update Student Repertoire Progress
 
@@ -202,17 +200,23 @@ Use this feature to update a student's progress in the syllabus ie to add a new 
 
 When this feature is selected, the user is requested to enter the name of a student, or any key to see a list of current student names.  Entering anything other than a valid student name results in an `INVALID INPUT` warning and the list of valid student names is presented (as described in previous features).
 
-Once a valid student name has been entered, the user is presented with a choice between adding a new step or updating an existing step as completed (ie status = Competent):
+Once a valid student name has been entered, the program checks if the student has already completed the entire syllabus and if so, displays the below message:
+
+![Student Syllabus Completed](docs/repertoire-syllabus-completed.png)
+
+If the student has not completed the syllabus, the user is presented with a choice between adding a new step or updating an existing step as completed (ie status = Competent):
 
 ![Student Repertoire Update](docs/repertoire-update.png)
 
 `[a]  Add new step`
 
-If `a` is selected, the program checks if the student has any new steps left to add and if they do not, displays a message advising the student has already started or completed all steps in the syllabus:
+To add a new step for the student to start learning, select `a`.
+
+If `a` is selected, the program checks if the student has any new steps left to add from the current sullabus, and if they do not, displays a message advising the student has already started or completed all steps in the syllabus:
 
 ![Student No More New Steps in Syllabus](docs/repertoire-add-none.png)
 
-If there are still steps in the syllabus that the student has not started learning, a list of dances is presented to select from.  Invalid input results in a warning (as previously described).  Once a valid dance has been entered, the program checks if the student still has new steps to start in that dance and display a message if not:
+If there are still steps in the syllabus that the student has not started learning, a list of dances in the syllabus is presented to select from.  Invalid input results in a warning (as previously described).  Once a valid dance has been entered, the program checks if the student still has new steps to start in that dance and if not, displays the below message:
 
 ![Student No More New Steps in dance](docs/repertoire-add-none-dance.png)
 
@@ -234,7 +238,9 @@ Once a valid step is chosen, the status of the step in the student's repertoire 
 
 `[u]  Update step in progress to Competent`
 
-The flow of this feature is similar to that of `Add new step`, except that it will check if the student has any steps with a status of Started.  If not, the following message is displayed:
+To indicate that the student has become competent in a step they are currently learning, select `u`.
+
+The flow of this feature is similar to that of `Add new step`, except that it will check if the student has any steps currently in progress (ie with a status of Started).  If not, the following message is displayed:
 
 ![Student Started Steps None](docs/repertoire-update-none.png)
 
@@ -267,15 +273,15 @@ Planned features for this module include:
 
 ## Implementation Plan
 
-The implementation plan for this project was created using [Trello](https://trello.com/) and can be access via the following link:
+The implementation plan for this project was created using [Trello](https://trello.com/) and can be accessed via the following link:
 
 [Terminal App - Dance Diary](https://trello.com/b/bFwCFIW8/terminal-app-dance-diary)
 
-The Trello workspace has been set to Public, but screenshots are also provided.
-
-One or more cards was created to track the development of each feature (depending on complexity) and checklists were created within each major card to further track the stages of developing each feature.  Due dates were added to cards and sometimes also to individual checklist items within cards.
+The Trello workspace has been set to Public (per screenshot below), but screenshots are also provided.
 
 ![Trell board is set to Public](docs/trello-board-public.png)
+
+One or more cards was created to track the development of each feature (depending on complexity) and checklists were created within each major card to further track the stages of developing each feature.  Due dates were added to cards and sometimes also to individual checklist items within cards.
 
 5 May, 2024:
 
@@ -285,11 +291,11 @@ One or more cards was created to track the development of each feature (dependin
 
 ![Trello on Tuesday](docs/trello3-tues.png)
 
-8 May 2024 - At this stage, determined that the Lesson module could not be developed for the initial project submission, so moved to Backlog:
+8 May 2024 - At this stage, it was determined that the Lesson module could not be developed for the initial project submission, so tasks relating to this module were moved to Backlog:
 
 ![Trello on Wednesday](docs/trello7-wed.png)
 
-9 May, 2024:
+9 May, 2024 - Added a list for Bugs (bug found was resolved that day):
 
 ![Trello on Thursday](docs/trello11-thurs.png)
 

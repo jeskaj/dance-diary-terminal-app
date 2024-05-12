@@ -17,6 +17,7 @@ from syllabus import view_syllabus, view_dance
 # Define colors using color50 module
 blueviolet = css('blueviolet')
 lightcoral = css('lightcoral')
+darkgreen = css('darkgreen')
 
 
 def print_main_menu():
@@ -34,8 +35,8 @@ def print_syllabus_menu():
     """
     Prints 2nd level SYLLABUS MENU options
     """
-    print(f"\n{constants.GREEN_BG}SYLLABUS MENU:{constants.RESET}")
-    print(f"{constants.GREEN}[1]  View Entire Syllabus")
+    print(f"\n{darkgreen.bg()}SYLLABUS MENU:{constants.RESET}")
+    print(f"{darkgreen}[1]  View Entire Syllabus")
     print(f"[2]  View Syllabus by Dance")
     print(f"[0]  Return to Main Menu\n{constants.RESET}")
 

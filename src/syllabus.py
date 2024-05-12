@@ -9,6 +9,7 @@ import string
 
 # Define colors using color50 module
 greensteps = css('lightgreen')
+darkgreen = css('darkgreen')
 
 
 def print_step(step: dict):
@@ -39,13 +40,13 @@ def view_syllabus(filename: str):
         syllabus = json.load(f)
         # Sorts dictionary elements within list, by dance, then level
         syllabus_sorted = sorted(syllabus, key=lambda s: (s['dance'], s['level']))
-    print(f'\n\n{constants.GREEN_BG}*** DANCE SYLLABUS ***{constants.RESET}\n')
+    print(f'\n\n{darkgreen.bg()}*** DANCE SYLLABUS ***{constants.RESET}\n')
     # Print details of each step on a new line, for readability
     for step in syllabus_sorted:
         # Call function to print details of dance step
         print_step(step)
     # Show total number of steps at end of syllabus
-    print (f'\n{constants.GREEN} *** END OF SYLLABUS - Total steps: {len(syllabus)} ***{constants.RESET}')
+    print (f'\n{darkgreen}** END OF SYLLABUS - Total steps: {len(syllabus)} ***{constants.RESET}')
 
 
 def dance_set(filename: str):
@@ -126,7 +127,7 @@ def view_dance(filename: str):
         if dance.lower() in dances:
             dance_valid = True
     # If input valid, print heading
-    print(f'\n\n{greensteps.bg()}{dance.upper()} SYLLABUS:{constants.RESET}\n')
+    print(f'\n\n{darkgreen.bg()}{dance.upper()} SYLLABUS:{constants.RESET}\n')
     # Find steps in syllabus where dance == selected dance
     for step in syllabus:
         if step['dance'].lower() == dance.lower():
