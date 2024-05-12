@@ -227,9 +227,11 @@ Otherwise, a list of steps able to be added is displayed, noting that:
 - If all Level 1 & 2 steps are completed, Level 3 steps that are not yet completed will be displayed
 
 *Example: Student has not completed Level 1 in Waltz:*
+
 ![Repertoire Add Step Start](docs/repertoire-add-start.png)
 
 *Example:  Student has completed Levels 1 & 2 in Swing:*
+
 ![Repertoire Add Step Start](docs/repertoire-lvl1and2-completed.png)
 
 Once a valid step is chosen, the status of the step in the student's repertoire .json file is updated to Started and a confirmation message is displayed:

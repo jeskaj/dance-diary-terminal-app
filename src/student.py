@@ -218,7 +218,7 @@ def view_students():
         for student in students_sorted:
             print_student_details(student)
         # Print total number of students, based on length of list
-        print(f"\n{teal}*** TOTAL STUDENTS: {len(students)}***{constants.RESET}")
+        print(f"\n{teal}*** TOTAL STUDENTS: {len(students)} ***{constants.RESET}")
 
     # If s entered, run function to find & display contact details & repertoire of single student
     elif selection == "s":
