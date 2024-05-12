@@ -9,9 +9,9 @@ from syllabus import print_step, dance_set
 
 
 # Define colors using color50 module
-greensteps = css('lightgreen')
-teal = css('teal')
-forestgreen = css('forestgreen')
+greensteps = css("lightgreen")
+teal = css("teal")
+forestgreen = css("forestgreen")
 
 
 def repertoire_filename(student_name):
@@ -153,7 +153,9 @@ def view_repertoire(student_name: str):
     if len(current_steps) != 0:
         # Sort current steps by dance name
         current_steps_sorted = sorted(current_steps, key=lambda d: d["dance"])
-        print(f"\n{forestgreen.bg()}STEPS IN PROGRESS (student is currently learning these steps):{constants.RESET}")
+        print(
+            f"\n{forestgreen.bg()}STEPS IN PROGRESS (student is currently learning these steps):{constants.RESET}"
+        )
         # Display current steps
         for step in current_steps_sorted:
             print_step(step)
@@ -162,7 +164,9 @@ def view_repertoire(student_name: str):
     if len(completed_steps) != 0:
         # Sort completed steps by dance name
         completed_steps_sorted = sorted(completed_steps, key=lambda d: d["dance"])
-        print(F"\n{forestgreen.bg()}STEPS COMPLETED (student is competent in these steps):{constants.RESET}")
+        print(
+            f"\n{forestgreen.bg()}STEPS COMPLETED (student is competent in these steps):{constants.RESET}"
+        )
         # Display steps student has completed
         for step in completed_steps_sorted:
             print_step(step)
@@ -187,7 +191,7 @@ def select_dance(repertroire_filepath: str):
     # Display list of available dances
     print(f"\n{teal.bg()}AVAILABLE DANCES:{constants.RESET}")
     for dance in dances:
-        print(f'{teal}{string.capwords(dance)}{constants.RESET}')
+        print(f"{teal}{string.capwords(dance)}{constants.RESET}")
     # Get user selection
     dance_selection = input("\nEnter a dance from the above list:  ")
 
@@ -225,7 +229,7 @@ def validate_step_choice(new_steps: list):
     while step_choice.lower() not in step_names:
         # Request new input, until a valid step name is entered
         step_choice = input(
-            F"\n{constants.RED}INVALID INPUT:{constants.RESET}  You must enter the name of a step from above list (or 0 to quit):  "
+            f"\n{constants.RED}INVALID INPUT:{constants.RESET}  You must enter the name of a step from above list (or 0 to quit):  "
         )
         # Exit the process if 0 is entered
         if step_choice == "0":
@@ -268,191 +272,200 @@ def update_step_status(
 def update_repertoire(student_name):
     """
     Updates student's repertoire by either adding a new step (ie update status to Started)
-    or indicate when student becomes competent in a step (ie update status from Started to Competent)
+    or indicating when student becomes competent in a step (ie update status from Started to Competent)
     """
     # Load student's repertoire and store in local variable
     filename = repertoire_filename(student_name)
     with open(f"repertoire/{filename}") as f:
         repertoire = json.load(f)
 
-    # Present user with add or update options
-    print(f"\n{teal.bg()}Options:{constants.RESET}")
-    print(f"{teal}[a]  Add new step")
-    print("[u]  Update step in progress to Competent")
-    print(f"[0]  Return to Student Menu{constants.RESET}")
-    selection = input("\nEnter a or u (or 0 to cancel):  ")
-
-    # If user has not input 0 to quit, check validity of input
-    if selection != "0":
-        # Check input validity
-        while selection not in ("a", "u"):
-            selection = input(
-                f"\n{constants.RED}INVALID INPUT:{constants.RESET}  Please enter a, u or 0 (refer menu above):  "
+    # Check if student has already completed the entire syllabus
+    completed_steps = steps_with_status(repertoire, "Competent")
+    if len(completed_steps) == len(repertoire):
+        print(
+                f"{constants.MAGENTA}Congratulations! {string.capwords(student_name)} has completed the current syllabus. There are no more steps to be added or updated.{constants.RESET}"
             )
-            if selection == "0":
-                break
 
-        if selection == "a":
-            # Check that student has New steps available (across all dances in syllabus)
-            new_steps = steps_with_status(repertoire, "New")
-            if len(new_steps) == 0:
-                print(
-                    f"{constants.MAGENTA}{string.capwords(student_name)} has already started learning or become competent in all steps in the syllabus. There are no new steps left to be added.{constants.RESET}"
+    # If student has not completed the entire syllabus, proceed
+    else:
+        # Present user with add or update options
+        print(f"\n{teal.bg()}Options:{constants.RESET}")
+        print(f"{teal}[a]  Add new step")
+        print("[u]  Update step in progress to Competent")
+        print(f"[0]  Return to Student Menu{constants.RESET}")
+        selection = input("\nEnter a or u (or 0 to cancel):  ")
+
+        # If user has not input 0 to quit, check validity of input
+        if selection != "0":
+            # Check input validity
+            while selection not in ("a", "u"):
+                selection = input(
+                    f"\n{constants.RED}INVALID INPUT:{constants.RESET}  Please enter a, u or 0 (refer menu above):  "
                 )
-            else:
-                # Call function to display available dances & allow user to input a selection
-                dance_selection = select_dance(f"repertoire/{filename}")
-                # Call function to create list of steps from the chosen dance
-                dance_steps = steps_from_dance(repertoire, dance_selection)
-                # Call function to create list filtering the above list down to those with status New
-                new_steps = steps_with_status(dance_steps, "New")
+                if selection == "0":
+                    break
 
-                # Check that student still has some new steps left to learn in chosen dance
+            if selection == "a":
+                # Check that student has New steps available (across all dances in syllabus)
+                new_steps = steps_with_status(repertoire, "New")
                 if len(new_steps) == 0:
                     print(
-                        f"\n{constants.MAGENTA}*** NO NEW STEPS TO ADD: This student has already started learning all steps in the {string.capwords(dance_selection)} syllabus.{constants.RESET}"
+                        f"{constants.MAGENTA}{string.capwords(student_name)} has already started learning or become competent in all steps in the syllabus. There are no new steps left to be added.{constants.RESET}"
                     )
                 else:
-                    # Create a list for each level of steps found in list of available new steps
-                    new_steps_lvl1 = [
-                        step for step in new_steps if step["level"] == "1"
-                    ]
-                    new_steps_lvl2 = [
-                        step for step in new_steps if step["level"] == "2"
-                    ]
-                    new_steps_lvl3 = [
-                        step for step in new_steps if step["level"] == "3"
-                    ]
-                    # Check if student has completed all level 1 steps in dance
-                    if len(new_steps_lvl1) != 0:
-                        print(
-                            f"\n{teal.bg()}AVAILABLE NEW LEVEL 1 STEPS IN {dance_selection.capitalize()}:{constants.RESET}"
-                        )
-                        # For each new step, call function to print step details in readable format
-                        for step in new_steps_lvl1:
-                            print_step(step)
-                        # Call function to get user step choice & validate input
-                        step_choice = validate_step_choice(new_steps_lvl1)
+                    # Call function to display available dances & allow user to input a selection
+                    dance_selection = select_dance(f"repertoire/{filename}")
+                    # Call function to create list of steps from the chosen dance
+                    dance_steps = steps_from_dance(repertoire, dance_selection)
+                    # Call function to create list filtering the above list down to those with status New
+                    new_steps = steps_with_status(dance_steps, "New")
 
-                    # If level 1 steps all completed, check if student has completed all level 2 steps in dance
-                    elif len(new_steps_lvl2) != 0:
+                    # Check that student still has some new steps left to learn in chosen dance
+                    if len(new_steps) == 0:
                         print(
-                            f"\n{teal}Student has completed all Level 1 steps in {dance_selection.upper()}{constants.RESET}"
+                            f"\n{constants.MAGENTA}*** NO NEW STEPS TO ADD: This student has already started learning all steps in the {string.capwords(dance_selection)} syllabus.{constants.RESET}"
                         )
-                        print(
-                            f"\n{teal.bg()}AVAILABLE NEW LEVEL 2 STEPS IN {dance_selection.upper()}:{constants.RESET}"
-                        )
-                        # For each new step, call function to print step details in readable format
-                        for step in new_steps_lvl2:
-                            print_step(step)
-                        # Call function to get user step choice & validate input
-                        step_choice = validate_step_choice(new_steps_lvl2)
-
-                    # If level 1 & 2 steps all completed, display remaining level 3 steps in dance
                     else:
-                        print(
-                            f"\n{teal}Student has completed all Level 1 & 2 steps in {dance_selection.upper()}{constants.RESET}"
-                        )
-                        print(
-                            f"\n{teal.bg()}AVAILABLE NEW LEVEL 3 STEPS IN {dance_selection.upper()}:{constants.RESET}"
-                        )
-                        # For each new step, call function to print step details in readable format
-                        for step in new_steps_lvl3:
-                            print_step(step)
-                        # Call function to get user step choice & validate input
-                        step_choice = validate_step_choice(new_steps_lvl3)
+                        # Create a list for each level of steps found in list of available new steps
+                        new_steps_lvl1 = [
+                            step for step in new_steps if step["level"] == "1"
+                        ]
+                        new_steps_lvl2 = [
+                            step for step in new_steps if step["level"] == "2"
+                        ]
+                        new_steps_lvl3 = [
+                            step for step in new_steps if step["level"] == "3"
+                        ]
+                        # Check if student has completed all level 1 steps in dance
+                        if len(new_steps_lvl1) != 0:
+                            print(
+                                f"\n{teal.bg()}AVAILABLE NEW LEVEL 1 STEPS IN {dance_selection.capitalize()}:{constants.RESET}"
+                            )
+                            # For each new step, call function to print step details in readable format
+                            for step in new_steps_lvl1:
+                                print_step(step)
+                            # Call function to get user step choice & validate input
+                            step_choice = validate_step_choice(new_steps_lvl1)
 
-                    if step_choice != "0":
-                        # Call function to update status of step to be added to Started
-                        update_step_status(
-                            repertoire, dance_selection, step_choice, "Started"
-                        )
-                        with open(f"repertoire/{filename}", "w") as f:
-                            json.dump(repertoire, f, indent=4)
-                        print(
-                            f"\n{teal}STEP ADDED: {string.capwords(dance_selection)} - {string.capwords(step_choice)} has been added to {string.capwords(student_name)}'s repertoire with status Started{constants.RESET}"
-                        )
+                        # If level 1 steps all completed, check if student has completed all level 2 steps in dance
+                        elif len(new_steps_lvl2) != 0:
+                            print(
+                                f"\n{teal}Student has completed all Level 1 steps in {dance_selection.upper()}{constants.RESET}"
+                            )
+                            print(
+                                f"\n{teal.bg()}AVAILABLE NEW LEVEL 2 STEPS IN {dance_selection.upper()}:{constants.RESET}"
+                            )
+                            # For each new step, call function to print step details in readable format
+                            for step in new_steps_lvl2:
+                                print_step(step)
+                            # Call function to get user step choice & validate input
+                            step_choice = validate_step_choice(new_steps_lvl2)
 
-        elif selection == "u":
-            # Check that student has at least one step in progress ie status = started (across all dances in syllabus)
-            started_steps = steps_with_status(repertoire, "Started")
-            if len(started_steps) == 0:
-                print(
-                    f"{teal}{string.capwords(student_name)} has no steps in progress. You will need to add a new step.{constants.RESET}"
-                )
-            else:
-                # Call function to display available dances & allow user to input a selection
-                dance_selection = select_dance(f"repertoire/{filename}")
-                # Call function to create list of steps from the chosen dance
-                dance_steps = steps_from_dance(repertoire, dance_selection)
-                # Call function to create list filtering the above list down to those with status Started
-                started_steps = steps_with_status(dance_steps, "Started")
+                        # If level 1 & 2 steps all completed, display remaining level 3 steps in dance
+                        else:
+                            print(
+                                f"\n{teal}Student has completed all Level 1 & 2 steps in {dance_selection.upper()}{constants.RESET}"
+                            )
+                            print(
+                                f"\n{teal.bg()}AVAILABLE NEW LEVEL 3 STEPS IN {dance_selection.upper()}:{constants.RESET}"
+                            )
+                            # For each new step, call function to print step details in readable format
+                            for step in new_steps_lvl3:
+                                print_step(step)
+                            # Call function to get user step choice & validate input
+                            step_choice = validate_step_choice(new_steps_lvl3)
 
-                # Check that student has some steps in progress in chosen dance
+                        if step_choice != "0":
+                            # Call function to update status of step to be added to Started
+                            update_step_status(
+                                repertoire, dance_selection, step_choice, "Started"
+                            )
+                            with open(f"repertoire/{filename}", "w") as f:
+                                json.dump(repertoire, f, indent=4)
+                            print(
+                                f"\n{teal}STEP ADDED: {string.capwords(dance_selection)} - {string.capwords(step_choice)} has been added to {string.capwords(student_name)}'s repertoire with status Started{constants.RESET}"
+                            )
+
+            elif selection == "u":
+                # Check that student has at least one step in progress ie status = started (across all dances in syllabus)
+                started_steps = steps_with_status(repertoire, "Started")
                 if len(started_steps) == 0:
                     print(
-                        f"\n{constants.MAGENTA}*** NO STEPS IN PROGRESS: This student has no steps in progress for {string.capwords(dance_selection)}.{constants.RESET}"
+                        f"{teal}{string.capwords(student_name)} has no steps in progress. You will need to add a new step.{constants.RESET}"
                     )
                 else:
-                    # Create a list for each level of steps found in list of available new steps
-                    started_steps_lvl1 = [
-                        step for step in started_steps if step["level"] == "1"
-                    ]
-                    started_steps_lvl2 = [
-                        step for step in started_steps if step["level"] == "2"
-                    ]
-                    started_steps_lvl3 = [
-                        step for step in started_steps if step["level"] == "3"
-                    ]
-                    # Check if student has completed all level 1 steps in dance
-                    if len(started_steps_lvl1) != 0:
-                        print(
-                            f"\n{teal.bg()}STEPS IN PROGRESS FOR LEVEL 1 {dance_selection.capitalize()}:{constants.RESET}"
-                        )
-                        # For each new step, call function to print step details in readable format
-                        for step in started_steps_lvl1:
-                            print_step(step)
-                        # Call function to get user step choice & validate input
-                        step_choice = validate_step_choice(started_steps_lvl1)
+                    # Call function to display available dances & allow user to input a selection
+                    dance_selection = select_dance(f"repertoire/{filename}")
+                    # Call function to create list of steps from the chosen dance
+                    dance_steps = steps_from_dance(repertoire, dance_selection)
+                    # Call function to create list filtering the above list down to those with status Started
+                    started_steps = steps_with_status(dance_steps, "Started")
 
-                    # If level 1 steps all completed, check if student has completed all level 2 steps in dance
-                    elif len(started_steps_lvl2) != 0:
+                    # Check that student has some steps in progress in chosen dance
+                    if len(started_steps) == 0:
                         print(
-                            f"\n{teal}Student has completed all Level 1 steps in {dance_selection.upper()}{constants.RESET}"
+                            f"\n{constants.MAGENTA}*** NO STEPS IN PROGRESS: This student has no steps in progress for {string.capwords(dance_selection)}.{constants.RESET}"
                         )
-                        print(
-                            f"\n{teal.bg()}STEPS IN PROGRESS FOR LEVEL 2 {dance_selection.upper()}:{constants.RESET}"
-                        )
-                        # For each new step, call function to print step details in readable format
-                        for step in started_steps_lvl2:
-                            print_step(step)
-                        # Call function to get user step choice & validate input
-                        step_choice = validate_step_choice(started_steps_lvl2)
-
-                    # If level 1 & 2 steps all completed, display remaining level 3 steps in dance
                     else:
-                        print(
-                            f"\n{teal}Student has completed all Level 1 & 2 steps in {dance_selection.upper()}{constants.RESET}"
-                        )
-                        print(
-                            f"\n{teal.bg()}STEPS IN PROGRESS FOR LEVEL 3 {dance_selection.upper()}:{constants.RESET}"
-                        )
-                        # For each new step, call function to print step details in readable format
-                        for step in started_steps_lvl3:
-                            print_step(step)
-                        # Call function to get user step choice & validate input
-                        step_choice = validate_step_choice(started_steps_lvl3)
+                        # Create a list for each level of steps found in list of available new steps
+                        started_steps_lvl1 = [
+                            step for step in started_steps if step["level"] == "1"
+                        ]
+                        started_steps_lvl2 = [
+                            step for step in started_steps if step["level"] == "2"
+                        ]
+                        started_steps_lvl3 = [
+                            step for step in started_steps if step["level"] == "3"
+                        ]
+                        # Check if student has completed all level 1 steps in dance
+                        if len(started_steps_lvl1) != 0:
+                            print(
+                                f"\n{teal.bg()}STEPS IN PROGRESS FOR LEVEL 1 {dance_selection.capitalize()}:{constants.RESET}"
+                            )
+                            # For each new step, call function to print step details in readable format
+                            for step in started_steps_lvl1:
+                                print_step(step)
+                            # Call function to get user step choice & validate input
+                            step_choice = validate_step_choice(started_steps_lvl1)
 
-                    if step_choice != "0":
-                        # Call function to update status of step to Competent
-                        update_step_status(
-                            repertoire, dance_selection, step_choice, "Competent"
-                        )
-                        with open(f"repertoire/{filename}", "w") as f:
-                            json.dump(repertoire, f, indent=4)
-                        print(
-                            f"\n{teal}STEP COMPLETED: The status of {string.capwords(dance_selection)} - {string.capwords(step_choice)} has been updated to Competent in {string.capwords(student_name)}'s repertoire{constants.RESET}"
-                        )
+                        # If level 1 steps all completed, check if student has completed all level 2 steps in dance
+                        elif len(started_steps_lvl2) != 0:
+                            print(
+                                f"\n{teal}Student has completed all Level 1 steps in {dance_selection.upper()}{constants.RESET}"
+                            )
+                            print(
+                                f"\n{teal.bg()}STEPS IN PROGRESS FOR LEVEL 2 {dance_selection.upper()}:{constants.RESET}"
+                            )
+                            # For each new step, call function to print step details in readable format
+                            for step in started_steps_lvl2:
+                                print_step(step)
+                            # Call function to get user step choice & validate input
+                            step_choice = validate_step_choice(started_steps_lvl2)
+
+                        # If level 1 & 2 steps all completed, display remaining level 3 steps in dance
+                        else:
+                            print(
+                                f"\n{teal}Student has completed all Level 1 & 2 steps in {dance_selection.upper()}{constants.RESET}"
+                            )
+                            print(
+                                f"\n{teal.bg()}STEPS IN PROGRESS FOR LEVEL 3 {dance_selection.upper()}:{constants.RESET}"
+                            )
+                            # For each new step, call function to print step details in readable format
+                            for step in started_steps_lvl3:
+                                print_step(step)
+                            # Call function to get user step choice & validate input
+                            step_choice = validate_step_choice(started_steps_lvl3)
+
+                        if step_choice != "0":
+                            # Call function to update status of step to Competent
+                            update_step_status(
+                                repertoire, dance_selection, step_choice, "Competent"
+                            )
+                            with open(f"repertoire/{filename}", "w") as f:
+                                json.dump(repertoire, f, indent=4)
+                            print(
+                                f"\n{teal}STEP COMPLETED: The status of {string.capwords(dance_selection)} - {string.capwords(step_choice)} has been updated to Competent in {string.capwords(student_name)}'s repertoire{constants.RESET}"
+                            )
 
 
 if __name__ == "__main__":
