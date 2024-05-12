@@ -97,13 +97,13 @@
     },
     {
         "name": "Peter Parker",
-        "email": "peterp@avengers.com",
-        "mobile": "0283 287 383",
+        "email": "pparker@spiderman.com",
+        "mobile": "0583 928 292",
         "repertoire": "peterparker.json"
     },
     {
         "name": "Lois Lane",
-        "email": "llane@supermanfan.com",
+        "email": "llane@thedailyplanet.com",
         "mobile": "0482 927 829",
         "repertoire": "loislane.json"
     },

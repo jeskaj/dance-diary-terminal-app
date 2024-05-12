@@ -218,7 +218,7 @@ def view_students():
         for student in students_sorted:
             print_student_details(student)
         # Print total number of students, based on length of list
-        print(f"\n{teal.bg()}TOTAL STUDENTS: {len(students)}{constants.RESET}")
+        print(f"\n{teal}*** TOTAL STUDENTS: {len(students)}***{constants.RESET}")
 
     # If s entered, run function to find & display contact details & repertoire of single student
     elif selection == "s":
@@ -272,12 +272,12 @@ def update_student():
                     if selection == "e":
                         new_email = input("Enter new email:  ")
                         student["email"] = new_email
-                        confirmation_msg = f"{teal}{student['name']}'s email has been updated to:{constants.RESET} {student['email']}"
+                        confirmation_msg = f"\n{teal}{student['name']}'s email has been updated to:{constants.RESET} {student['email']}"
                     # If m entered, update value of mobile and set relevant confirmation msg
                     elif selection == "m":
                         new_mobile = input("Enter new mobile:  ")
                         student["mobile"] = new_mobile
-                        confirmation_msg = f"{teal}{student['name']}'s mobile has been updated to:{constants.RESET} {student['mobile']}"
+                        confirmation_msg = f"\n{teal}{student['name']}'s mobile has been updated to:{constants.RESET} {student['mobile']}"
 
             # Output updated data back to students .json
             with open("students.json", "w") as f:
